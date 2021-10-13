@@ -3,14 +3,12 @@ package app;
 import javax.swing.JOptionPane;
 
 public class Calculos implements Formulas_Calculo_Renda {
-	private Pessoas renda;
-	private Despesas preco;
-	private float resultIgualitario;
-	private float resultProporcional;
+	protected Pessoas renda;
+	protected Despesas preco;
+	protected float resultIgualitario;
+	protected float resultProporcional;
 	
-	public Calculos(Pessoas renda, Despesas preco) {
-		this.renda = renda;
-		this.preco = preco;
+	public Calculos() {
 		// TODO Auto-generated constructor stub
 	}
 	public Pessoas getRenda() {
