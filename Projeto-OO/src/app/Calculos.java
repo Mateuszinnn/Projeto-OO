@@ -10,8 +10,6 @@ public class Calculos {
 	
 	private float resultProporcional;
 	
-	private float teste;
-	
 	public static void emitirPagamentos() {};
 	
 	public float getPreco() {
@@ -21,8 +19,4 @@ public class Calculos {
 	public float getRenda() {
 		return renda;
 	};
-	
-	public float getTeste() {
-		return teste;
-	};
-	}
+}
