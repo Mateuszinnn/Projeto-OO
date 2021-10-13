@@ -2,7 +2,7 @@ package app;
 
 public interface Formulas_Calculo_Renda {
 
-	public float calculoRegraIgualitaria();
+	public abstract float calculoRegraIgualitaria();
 	
-	public float calculoRegraProporcional();
+	public abstract float calculoRegraProporcional();
 }
