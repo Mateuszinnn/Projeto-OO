@@ -6,7 +6,7 @@ UnB - Universidade de Brasilia\
 FGA - Faculdade do Gama\
 Prof. André Luiz Peron Martins Lanna
 
-Alunos:
+Alunos:\
 Arthur josé nascimento de Lima		19/0084600\
 Beatriz Santos de Oliveira		18/0117173\
 Davi Silva Matias			19/0127767\
