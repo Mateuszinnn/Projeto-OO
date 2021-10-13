@@ -4,11 +4,11 @@ import javax.swing.JOptionPane;
 
 public class Calculos implements Formulas_Calculo_Renda {
 	private Pessoas renda;
-	private Categoria preco;
+	private Despesas preco;
 	private float resultIgualitario;
 	private float resultProporcional;
 	
-	public Calculos(Pessoas renda, Categoria preco) {
+	public Calculos(Pessoas renda, Despesas preco) {
 		this.renda = renda;
 		this.preco = preco;
 		// TODO Auto-generated constructor stub
@@ -28,7 +28,7 @@ public class Calculos implements Formulas_Calculo_Renda {
 	}
 
 
-	public void setPreco(Categoria preco) {
+	public void setPreco(Despesas preco) {
 		this.preco = preco;
 	}
 
@@ -39,8 +39,6 @@ public class Calculos implements Formulas_Calculo_Renda {
 	@Override
 	public float calculoRegraIgualitaria() {
 		return resultIgualitario;
-		// TODO Auto-generated method stub
-		//resultIgualitario = this.preco.getValorFinal()/this.renda.getNumPessoas();
 	}
 	@Override
 	public float calculoRegraProporcional() {
