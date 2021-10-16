@@ -1,6 +1,10 @@
-package app;
+package Calculos;
 
 import javax.swing.JOptionPane;
+
+import Cadastros.Categoria;
+import Cadastros.Despesas;
+import Cadastros.Pessoas;
 
 public class Calculos implements Formulas_Calculo_Renda {
 	protected Pessoas renda;
@@ -9,7 +13,6 @@ public class Calculos implements Formulas_Calculo_Renda {
 	protected float resultProporcional;
 	
 	public Calculos() {
-		// TODO Auto-generated constructor stub
 	}
 	public Pessoas getRenda() {
 		return renda;
@@ -41,7 +44,6 @@ public class Calculos implements Formulas_Calculo_Renda {
 	@Override
 	public float calculoRegraProporcional() {
 		return resultProporcional;
-		// TODO Auto-generated method stub
 		//resultProporcional = 
 	}
 }

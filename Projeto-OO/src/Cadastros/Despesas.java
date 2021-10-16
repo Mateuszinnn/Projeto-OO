@@ -1,4 +1,4 @@
-package app;
+package Cadastros;
 
 import javax.swing.JOptionPane;
 
@@ -9,7 +9,6 @@ public class Despesas extends Categoria {
 	private int valorFinal;
 	
 	public Despesas(String descricao, int valor, String categoria) {
-		// TODO Auto-generated constructor stub
 		this.descricao = descricao;
 		this.valor = valor;
 		this.categoria = categoria;
