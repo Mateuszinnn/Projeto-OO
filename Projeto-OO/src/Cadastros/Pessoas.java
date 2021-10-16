@@ -15,6 +15,10 @@ public class Pessoas {
 		this.numPessoas = 0;
 	}
 
+	public Pessoas() {
+		
+	}
+
 	public String getNome() {
 		return nome;
 	}

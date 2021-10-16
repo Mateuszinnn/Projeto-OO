@@ -14,6 +14,10 @@ public class Despesas extends Categoria {
 		this.categoria = categoria;
 	}
 
+	public Despesas() {
+		
+	}
+
 	public String getDescricao() {
 		return descricao;
 	}

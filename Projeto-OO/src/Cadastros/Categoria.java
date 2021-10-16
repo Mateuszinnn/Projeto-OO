@@ -9,7 +9,6 @@ public class Categoria {
 	
 	public Categoria() {
 		
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getNomeSubCategoria() {

@@ -2,12 +2,14 @@ package app;
 
 import javax.swing.JOptionPane;
 import Cadastros.Pessoas;
+import Cadastros.Despesas;
+import Cadastros.Categoria;
 
 public class Main_App {
 
-	public Main_App() {
-		// TODO Auto-generated constructor stub
-	}
+	static Pessoas pessoa= new Pessoas();
+	static Despesas despesa = new Despesas();
+	static Categoria categoria= new Categoria();
 
 	public static void main(String[] args){
 		
@@ -23,15 +25,15 @@ public class Main_App {
 
 			switch (opcao) {
 			case 1:
-				
+				pessoa.cadastrarPessoas();
 				break;
 
 			case 2: 
-				
+				despesa.cadastrarDespesas();
 				break;
-
-			case 3: 
 				
+			case 3: 
+				categoria.cadastrarCategoria();
 				break;
 
 			case 0: 
