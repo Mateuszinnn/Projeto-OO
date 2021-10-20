@@ -45,7 +45,7 @@ public class Main_App {
 				break;
 				
 			case 5:
-				
+				JOptionPane.showMessageDialog(null, calculo.calculoRegraProporcional());
 				break;
 			case 0: 
 				//sair do programa
