@@ -50,8 +50,7 @@ public class Pessoas {
 		Pessoas[] pessoas = new Pessoas[0];
 		nome = JOptionPane.showInputDialog("Informe o nome da pessoa:");
 		email = JOptionPane.showInputDialog("Informe o email da pessoa:");
-		String strTotRend = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
-		float totRendimento = Float.parseFloat(strTotRend);
+		float totRendimento = Float.parseFloat(JOptionPane.showInputDialog("Informe o rendimento total da pessoa "));
 		this.numPessoas = this.numPessoas++;
 		Pessoas p = new Pessoas(nome,email,totRendimento);
 		
