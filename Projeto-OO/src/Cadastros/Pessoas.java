@@ -24,25 +24,14 @@ public class Pessoas {
 		return nome;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
 	public String getEmail() {
 		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public float getTotRendimento() {
 		return totRendimento;
 	}
 
-	public void setTotRendimento(float totRendimento) {
-		this.totRendimento = totRendimento;
-	}
 	public int getNumPessoas() {
 		return numPessoas;
 	}

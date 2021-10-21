@@ -15,9 +15,6 @@ public class Categoria {
 		return subCategoria;
 	}
 
-	public void setNomeCategoria(String nomeCategoria) {
-		this.subCategoria = nomeCategoria;
-	}
 //Metodos especiais
 	public void cadastrarCategoria() {
 		 Categoria[] categorias = new Categoria[0];

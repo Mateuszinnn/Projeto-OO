@@ -18,21 +18,9 @@ public class Calculos implements Formulas_Calculo_Renda {
 		return renda;
 	}
 
-
-	public void setRenda(Pessoas renda) {
-		this.renda = renda;
-	}
-
-
 	public Categoria getPreco() {
 		return preco;
 	}
-
-
-	public void setPreco(Despesas preco) {
-		this.preco = preco;
-	}
-
 
 	public void emitirPagamentos(){
 		//if()
