@@ -50,7 +50,7 @@ public class Despesas extends Categoria {
 		 Despesas[] despesas = new Despesas[0];
 		 descricao = JOptionPane.showInputDialog("Informe a descrição da despesa(CAESB,CEB,Net,etc):");
 		 valor = Integer.parseInt(JOptionPane.showInputDialog("informe o valor da despesa: "));
-		 this.valorFinal = this.valor + this.valorFinal;
+		 valorFinal = valor + valorFinal;
 		 categoria = JOptionPane.showInputDialog("Informe a categoria da despesa(Agua,luz,telefonia,etc):");
 		 
 		 Despesas d = new Despesas(descricao,valor,categoria);

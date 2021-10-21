@@ -7,6 +7,7 @@ public class Pessoas {
 	private String email;
 	private float totRendimento;
 	private int numPessoas;
+	private float Rendimento;
 	
 	public Pessoas(String nomePessoa, String emailPessoa, float totRend) {
 		this.nome = nomePessoa;
@@ -45,13 +46,15 @@ public class Pessoas {
 	public int getNumPessoas() {
 		return numPessoas;
 	}
+	
 //metodos especiais
 	public void cadastrarPessoas() {
 		Pessoas[] pessoas = new Pessoas[0];
 		nome = JOptionPane.showInputDialog("Informe o nome da pessoa:");
 		email = JOptionPane.showInputDialog("Informe o email da pessoa:");
-		float totRendimento = Float.parseFloat(JOptionPane.showInputDialog("Informe o rendimento total da pessoa "));
-		this.numPessoas = this.numPessoas++;
+		Rendimento = Float.parseFloat(JOptionPane.showInputDialog("Informe o rendimento total da pessoa "));
+		totRendimento= Rendimento + totRendimento;
+		numPessoas = numPessoas+1;
 		Pessoas p = new Pessoas(nome,email,totRendimento);
 		
 		Pessoas[] tempP = new Pessoas[pessoas.length+1];
