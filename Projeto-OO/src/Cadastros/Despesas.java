@@ -24,14 +24,18 @@ public class Despesas extends Categoria {
 	
 	String nomeArquivo = "despesas"+"_"+month+"_"+year+".txt";
 	
-	public Despesas(String descricao, String categoria, int valor) {
+	public Despesas(String descricao, String categoria, int str) {
 		this.descricao = descricao;
-		this.valor = valor;
+		this.valor = str;
 		this.categoria = categoria;
 	}
 
 	public Despesas() {
 		despesas = new LinkedList<Despesas>();
+	}
+
+	public Despesas(String descricao2, String categoria2, String string) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getDescricao() {
@@ -54,10 +58,11 @@ public class Despesas extends Categoria {
 
 		 descricao = JOptionPane.showInputDialog("Informe a descrição da despesa(CAESB,CEB,Net,etc):");
 		 categoria = JOptionPane.showInputDialog("Informe a categoria da despesa(Agua,luz,telefonia,etc):");
-		 valor = Integer.parseInt(JOptionPane.showInputDialog("informe o valor da despesa: "));
+		 String str = JOptionPane.showInputDialog("informe o valor da despesa: ");
+		 valor = Integer.parseInt(str);
 		 valorFinal = valor + valorFinal;
 		 
-		 Despesas d = new Despesas(descricao,categoria,valor);
+		 Despesas d = new Despesas(descricao,categoria,valor); 
 		 
 		 boolean resposta = despesas.add(d);
 			if (resposta) 
