@@ -6,32 +6,39 @@ import Cadastros.Categoria;
 import Cadastros.Despesas;
 import Cadastros.Pessoas;
 
+
+
 public class Calculos implements Formulas_Calculo_Renda {
-	protected Pessoas renda;
-	protected Despesas preco;
+	Pessoas pessoas = new Pessoas();
+	Despesas despesas = new Despesas();
+	
+	//protected Pessoas totRendimento;
+	//protected Pessoas numPessoas;
+	//protected Despesas valorFinal;
 	protected float resultIgualitario;
 	protected float resultProporcional;
 	
 	public Calculos() {
+		
 	}
-	public Pessoas getRenda() {
-		return renda;
+	
+
+	public float getResultIgualitario() {
+		return resultIgualitario;
 	}
 
-	public Categoria getPreco() {
-		return preco;
+	public float getResultProporcional() {
+		return resultProporcional;
 	}
 
-	public void emitirPagamentos(){
-		//if()
+	@Override
+	public float calculoRegraProporcional() {
+	return resultProporcional;
+	//resultProporcional = 
 	}
 	@Override
 	public float calculoRegraIgualitaria() {
+		
 		return resultIgualitario;
-	}
-	@Override
-	public float calculoRegraProporcional() {
-		return resultProporcional;
-		//resultProporcional = 
 	}
 }

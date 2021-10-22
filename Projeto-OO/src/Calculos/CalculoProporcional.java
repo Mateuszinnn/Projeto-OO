@@ -6,8 +6,12 @@ import Cadastros.Pessoas;
 public class CalculoProporcional extends Calculos{
 
 	public CalculoProporcional(Pessoas renda, Despesas preco) {
-		this.renda = renda;
-		this.preco = preco;
+		//totRendimento = renda;
+		preco = preco;
 	}
-
+	@Override
+	public float calculoRegraProporcional() {
+	return resultProporcional;
+	//resultProporcional = 
+	}
 }

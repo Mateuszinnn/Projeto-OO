@@ -6,7 +6,7 @@ public class Pessoas {
 	private String nome;
 	private String email;
 	private float totRendimento;
-	private int numPessoas;
+	public int numPessoas;
 	private float Rendimento;
 	
 	public Pessoas(String nomePessoa, String emailPessoa, float totRend) {

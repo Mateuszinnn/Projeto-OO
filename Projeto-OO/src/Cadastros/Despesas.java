@@ -6,7 +6,7 @@ public class Despesas extends Categoria {
 	private String descricao;
 	private int valor;
 	private String categoria;
-	private int valorFinal;
+	public int valorFinal;
 	
 	public Despesas(String descricao, int valor, String categoria) {
 		this.descricao = descricao;
