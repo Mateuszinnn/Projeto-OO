@@ -1,6 +1,7 @@
 package Cadastros;
 
 import java.io.BufferedWriter;
+import java.time.YearMonth;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
@@ -20,10 +21,12 @@ public class Despesas extends Categoria {
 	private int valor;
 	private String categoria;
 	public int valorFinal;
+	int year = YearMonth.now().getYear();
+	int month = YearMonth.now().getMonthValue();
 	
 	List<Despesas> despesas;
 	
-	String nomeArquivo = "despesas.txt";
+	String nomeArquivo = "despesas"+"_"+month+"_"+year+".txt";
 	
 	public Despesas(String descricao, int valor, String categoria) {
 		this.descricao = descricao;
