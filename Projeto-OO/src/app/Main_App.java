@@ -30,10 +30,12 @@ public class Main_App {
 			switch (opcao) {
 			case 1:
 				pessoa.cadastrarPessoas();
+				pessoa.gravarAlunos();
 				break;
 
 			case 2: 
 				despesa.cadastrarDespesas();
+				despesa.gravarDespesas();
 				break;
 				
 			case 3: 
