@@ -1,11 +1,19 @@
 package Cadastros;
 
-import javax.swing.JOptionPane;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class Despesas extends Categoria {
 	private String descricao;
@@ -13,8 +21,9 @@ public class Despesas extends Categoria {
 	private String categoria;
 	public int valorFinal;
 	
-	List<Despesas> despesa;
-	String nomeArquiv = "despesa_<mes>_<ano>.txt";
+	List<Despesas> despesas;
+	
+	String nomeArquivo = "despesas.txt";
 	
 	public Despesas(String descricao, int valor, String categoria) {
 		this.descricao = descricao;
@@ -23,7 +32,7 @@ public class Despesas extends Categoria {
 	}
 
 	public Despesas() {
-		despesa = new LinkedList<Despesas>();
+		despesas = new LinkedList<Despesas>();
 	}
 
 	public String getDescricao() {
@@ -51,26 +60,26 @@ public class Despesas extends Categoria {
 		 
 		 Despesas d = new Despesas(descricao,valor,categoria);
 		 
-		 boolean resposta = despesa.add(d);
+		 boolean resposta = despesas.add(d);
 			if (resposta) 
 				JOptionPane.showMessageDialog(null, "Despesa cadastrada com sucesso");
 			
 			return;
-		}
+	}
 	
 	public String toString() {
 		return "<" + descricao + ">;<" + categoria + ">;<" + valor + ">;";
 	}
-
+	
 	public void gravarDespesas() {
 		BufferedWriter buffer = null;
 		FileWriter out = null;
 		
 		try {
-			out = new FileWriter(nomeArquiv);
+			out = new FileWriter(nomeArquivo);
 			buffer = new BufferedWriter(out);
 			
-			for (Despesas d : despesa) {
+			for (Despesas d : despesas) {
 				buffer.write(d.toString());
 				buffer.write('\n');
 			}
