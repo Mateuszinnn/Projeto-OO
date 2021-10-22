@@ -2,6 +2,7 @@ package Cadastros;
 
 import javax.swing.JOptionPane;
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -29,6 +30,8 @@ public class Pessoas {
 	public Pessoas() {
 		pessoa = new LinkedList<Pessoas>();
 	}
+
+
 
 	public String getNome() {
 		return nome;
@@ -83,4 +86,27 @@ public class Pessoas {
 		}
 	}	
 	
+	public void lerAlunos() {
+		FileInputStream in = null;  
+		try {
+			in = new FileInputStream(nomeArquivo); 
+			
+			byte[] conteudoArquivo = in.readAllBytes();
+		
+			String cadastro = "";
+			for (int i=0; i<conteudoArquivo.length; i++) {
+				cadastro += (char)conteudoArquivo[i];
+			}
+			
+			String[] strAlunos = cadastro.split("\n");
+			for (String als : strAlunos) {
+				String[] str = als.split(";");
+				Pessoas p = new Pessoas(str[0], str[1], str[2]);
+				pessoa.add(p);
+			}
+		} catch (IOException e) {
+			// TODO: handle exception
+		}
+	}
+
 }

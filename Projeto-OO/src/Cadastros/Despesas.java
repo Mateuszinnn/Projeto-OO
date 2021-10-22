@@ -9,12 +9,8 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
 import javax.swing.JOptionPane;
+
 
 public class Despesas extends Categoria {
 	private String descricao;
@@ -28,7 +24,7 @@ public class Despesas extends Categoria {
 	
 	String nomeArquivo = "despesas"+"_"+month+"_"+year+".txt";
 	
-	public Despesas(String descricao, int valor, String categoria) {
+	public Despesas(String descricao, String categoria, int valor) {
 		this.descricao = descricao;
 		this.valor = valor;
 		this.categoria = categoria;
@@ -57,11 +53,11 @@ public class Despesas extends Categoria {
 	public void cadastrarDespesas() {
 
 		 descricao = JOptionPane.showInputDialog("Informe a descrição da despesa(CAESB,CEB,Net,etc):");
+		 categoria = JOptionPane.showInputDialog("Informe a categoria da despesa(Agua,luz,telefonia,etc):");
 		 valor = Integer.parseInt(JOptionPane.showInputDialog("informe o valor da despesa: "));
 		 valorFinal = valor + valorFinal;
-		 categoria = JOptionPane.showInputDialog("Informe a categoria da despesa(Agua,luz,telefonia,etc):");
 		 
-		 Despesas d = new Despesas(descricao,valor,categoria);
+		 Despesas d = new Despesas(descricao,categoria,valor);
 		 
 		 boolean resposta = despesas.add(d);
 			if (resposta) 
@@ -73,7 +69,9 @@ public class Despesas extends Categoria {
 	public String toString() {
 		return "<" + descricao + ">;<" + categoria + ">;<" + valor + ">;";
 	}
-	
+	public String toStringValor(int valor){
+		return " " + valor;
+	}
 	public void gravarDespesas() {
 		BufferedWriter buffer = null;
 		FileWriter out = null;
@@ -90,6 +88,33 @@ public class Despesas extends Categoria {
 			buffer.close();
 		} catch (IOException e) {
 			// TODO: handle exception
+		}
+	}
+	public void lerDespesas() {
+		FileInputStream in = null;
+		
+		try {
+			in = new FileInputStream(nomeArquivo);
+			
+			byte[] conteudoArquivo = in.readAllBytes();
+			
+			
+			String cadastro = "";
+			for (int i=0; i<conteudoArquivo.length; i++) {
+				cadastro += (char)conteudoArquivo[i];
+			}
+			
+			
+			String[] strDespesas = cadastro.split("\n");
+			
+			
+			for (String als : strDespesas) {
+				String[] str = als.split(";");
+				Despesas d = new Despesas(str[0], str[1], str[2]);
+				despesas.add(d);
+			}
+		} catch (IOException e) {
+			
 		}
 	}
 }
