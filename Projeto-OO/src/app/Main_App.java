@@ -29,11 +29,13 @@ public class Main_App {
 
 			switch (opcao) {
 			case 1:
+				pessoa.lerAlunos();
 				pessoa.cadastrarPessoas();
 				pessoa.gravarAlunos();
 				break;
 
 			case 2: 
+				despesa.lerDespesas();
 				despesa.cadastrarDespesas();
 				despesa.gravarDespesas();
 				break;

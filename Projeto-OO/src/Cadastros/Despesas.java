@@ -14,9 +14,10 @@ import javax.swing.JOptionPane;
 
 public class Despesas extends Categoria {
 	private String descricao;
-	private int valor;
+	private String valor;
 	private String categoria;
-	public int valorFinal;
+	private float valorFloat;
+	public float valorFinal;
 	int year = YearMonth.now().getYear();
 	int month = YearMonth.now().getMonthValue();
 	
@@ -24,33 +25,26 @@ public class Despesas extends Categoria {
 	
 	String nomeArquivo = "despesas"+"_"+month+"_"+year+".txt";
 	
-	public Despesas(String descricao, String categoria, int str) {
+	public Despesas(String descricao, String categoria, String str) {
 		this.descricao = descricao;
-		this.valor = str;
 		this.categoria = categoria;
+		this.valor = str;
 	}
 
 	public Despesas() {
 		despesas = new LinkedList<Despesas>();
 	}
 
-	public Despesas(String descricao2, String categoria2, String string) {
-		// TODO Auto-generated constructor stub
-	}
-
 	public String getDescricao() {
 		return descricao;
 	}
 
-	public int getValor() {
-		return valor;
-	}
 
 	public String getCategoria() {
 		return categoria;
 	}
 
-	public int getValorFinal() {
+	public float getValorFinal() {
 		return valorFinal;
 	}
 //Metodos especiais
@@ -59,10 +53,12 @@ public class Despesas extends Categoria {
 		 descricao = JOptionPane.showInputDialog("Informe a descrição da despesa(CAESB,CEB,Net,etc):");
 		 categoria = JOptionPane.showInputDialog("Informe a categoria da despesa(Agua,luz,telefonia,etc):");
 		 String str = JOptionPane.showInputDialog("informe o valor da despesa: ");
-		 valor = Integer.parseInt(str);
-		 valorFinal = valor + valorFinal;
+		 valor = str;
+		 valorFloat = Float.parseFloat(valor);
+		 valorFinal = valorFloat + valorFinal;
+		 JOptionPane.showMessageDialog(null, valorFinal);
 		 
-		 Despesas d = new Despesas(descricao,categoria,valor); 
+		 Despesas d = new Despesas(descricao,categoria,str); 
 		 
 		 boolean resposta = despesas.add(d);
 			if (resposta) 
@@ -72,11 +68,9 @@ public class Despesas extends Categoria {
 	}
 	
 	public String toString() {
-		return "<" + descricao + ">;<" + categoria + ">;<" + valor + ">;";
+		return descricao + ";" + categoria + ";" + valor + ";";
 	}
-	public String toStringValor(int valor){
-		return " " + valor;
-	}
+	
 	public void gravarDespesas() {
 		BufferedWriter buffer = null;
 		FileWriter out = null;
@@ -106,9 +100,12 @@ public class Despesas extends Categoria {
 			
 			String cadastro = "";
 			for (int i=0; i<conteudoArquivo.length; i++) {
-				cadastro += (char)conteudoArquivo[i];
+				if((char)conteudoArquivo[i]!=(char)conteudoArquivo[i]) {
+					cadastro += (char)conteudoArquivo[i];
+				}else {
+					cadastro += "";
+				}
 			}
-			
 			
 			String[] strDespesas = cadastro.split("\n");
 			

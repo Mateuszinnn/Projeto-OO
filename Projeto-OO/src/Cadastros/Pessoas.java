@@ -12,7 +12,8 @@ import java.util.List;
 public class Pessoas {
 	private String nome;
 	private String email;
-	private float totRendimento;
+	private String totRendimento;
+	private float totRendimentoFloat;
 	public int numPessoas;
 	private float Rendimento;
 	
@@ -20,10 +21,10 @@ public class Pessoas {
 	
 	String nomeArquivo = "alunos.txt";
 
-	public Pessoas(String nomePessoa, String emailPessoa, float totRend) {
+	public Pessoas(String nomePessoa, String emailPessoa, String strRendimento) {
 		this.nome = nomePessoa;
 		this.email = emailPessoa;
-		this.totRendimento = totRend;
+		this.totRendimento = strRendimento;
 		this.numPessoas = 0;
 	}
 
@@ -41,10 +42,6 @@ public class Pessoas {
 		return email;
 	}
 
-	public float getTotRendimento() {
-		return totRendimento;
-	}
-
 	public int getNumPessoas() {
 		return numPessoas;
 	}
@@ -53,11 +50,13 @@ public class Pessoas {
 	public void cadastrarPessoas() {
 		nome = JOptionPane.showInputDialog("Informe o nome da pessoa:");
 		email = JOptionPane.showInputDialog("Informe o email da pessoa:");
-		Rendimento = Float.parseFloat(JOptionPane.showInputDialog("Informe o rendimento total da pessoa "));
-		totRendimento= Rendimento + totRendimento;
+		String strRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
+		totRendimento = strRendimento;
+		Rendimento= Float.parseFloat(totRendimento);
+		totRendimentoFloat= Rendimento + totRendimentoFloat;
 		numPessoas = numPessoas+1;
 		
-		Pessoas p = new Pessoas(nome,email,totRendimento);
+		Pessoas p = new Pessoas(nome,email,strRendimento);
 		
 		boolean resposta = pessoa.add(p);
 		if (resposta) 
@@ -65,7 +64,7 @@ public class Pessoas {
 		return;
 	}
 	public String toString() {
-		return "<" + nome + ">;<" + email + ">;<" + totRendimento + ">;";
+		return "" + nome + ";" + email + ";" + totRendimento + ";";
 	}
 	public void gravarAlunos() {
 		BufferedWriter buffer = null;
