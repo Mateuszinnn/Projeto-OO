@@ -100,11 +100,7 @@ public class Despesas extends Categoria {
 			
 			String cadastro = "";
 			for (int i=0; i<conteudoArquivo.length; i++) {
-				if((char)conteudoArquivo[i]!=(char)conteudoArquivo[i]) {
-					cadastro += (char)conteudoArquivo[i];
-				}else {
-					cadastro += "";
-				}
+				cadastro += (char)conteudoArquivo[i];
 			}
 			
 			String[] strDespesas = cadastro.split("\n");
