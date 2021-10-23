@@ -14,4 +14,8 @@ public class Categoria {
 		this.subCategoria = subCategoria;
 	}
 
+	public String getNomeSubCategoria(int index) {
+		return subCategoria.get(index);
+	}
+
 }
