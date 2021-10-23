@@ -1,4 +1,4 @@
-package Calculos;
+package calculos;
 
 public interface Formulas_Calculo_Renda {
 

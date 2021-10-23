@@ -1,10 +1,10 @@
-package Calculos;
+package calculos;
 
 import javax.swing.JOptionPane;
 
-import Cadastros.Categoria;
-import Cadastros.Despesas;
-import Cadastros.Pessoas;
+import cadastros.Categoria;
+import cadastros.Despesas;
+import cadastros.Pessoas;
 
 
 

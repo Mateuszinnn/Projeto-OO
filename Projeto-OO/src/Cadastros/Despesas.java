@@ -1,4 +1,4 @@
-package Cadastros;
+package cadastros;
 
 import java.io.BufferedWriter;
 import java.time.YearMonth;
@@ -14,9 +14,9 @@ import javax.swing.JOptionPane;
 
 public class Despesas extends Categoria {
 	private String descricao;
-	private int valor;
+	private float valor;
 	private String categoria;
-	public int valorFinal;
+	public float valorFinal;
 	int year = YearMonth.now().getYear();
 	int month = YearMonth.now().getMonthValue();
 	
@@ -24,7 +24,7 @@ public class Despesas extends Categoria {
 	
 	String nomeArquivo = "despesas"+"_"+month+"_"+year+".txt";
 	
-	public Despesas(String descricao, String categoria, int str) {
+	public Despesas(String descricao, String categoria, float str) {
 		this.descricao = descricao;
 		this.valor = str;
 		this.categoria = categoria;
@@ -42,7 +42,7 @@ public class Despesas extends Categoria {
 		return descricao;
 	}
 
-	public int getValor() {
+	public float getValor() {
 		return valor;
 	}
 
@@ -50,16 +50,16 @@ public class Despesas extends Categoria {
 		return categoria;
 	}
 
-	public int getValorFinal() {
+	public float getValorFinal() {
 		return valorFinal;
 	}
 //Metodos especiais
 	public void cadastrarDespesas() {
 
-		 descricao = JOptionPane.showInputDialog("Informe a descrição da despesa(CAESB,CEB,Net,etc):");
+		 descricao = JOptionPane.showInputDialog("Informe a descriï¿½ï¿½o da despesa(CAESB,CEB,Net,etc):");
 		 categoria = JOptionPane.showInputDialog("Informe a categoria da despesa(Agua,luz,telefonia,etc):");
 		 String str = JOptionPane.showInputDialog("informe o valor da despesa: ");
-		 valor = Integer.parseInt(str);
+		 valor = Float.parseInt(str);
 		 valorFinal = valor + valorFinal;
 		 
 		 Despesas d = new Despesas(descricao,categoria,valor); 
@@ -74,7 +74,7 @@ public class Despesas extends Categoria {
 	public String toString() {
 		return "<" + descricao + ">;<" + categoria + ">;<" + valor + ">;";
 	}
-	public String toStringValor(int valor){
+	public String toStringValor(float valor){
 		return " " + valor;
 	}
 	public void gravarDespesas() {
