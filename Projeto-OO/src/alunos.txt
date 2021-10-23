@@ -1,1 +1,4 @@
-<a>;<a>;<2.0>;
+mateus;mat;10000;
+joao;jo;2000;
+maria;ma;9000;
+andreia;and;8000;
