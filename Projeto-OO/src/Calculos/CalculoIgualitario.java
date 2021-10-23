@@ -1,7 +1,7 @@
-package calculos;
+package Calculos;
 
-import cadastros.Despesas;
-import cadastros.Pessoas;
+import Cadastros.Despesas;
+import Cadastros.Pessoas;
 
 public class CalculoIgualitario extends Calculos{
 

@@ -1,4 +1,4 @@
-package cadastros;
+package Cadastros;
 
 import javax.swing.JOptionPane;
 
