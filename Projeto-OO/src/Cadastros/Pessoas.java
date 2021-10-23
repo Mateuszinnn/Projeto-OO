@@ -16,9 +16,7 @@ public class Pessoas {
 	private float totRendimentoFloat;
 	public int numPessoas;
 	private float Rendimento;
-	
 	List<Pessoas> pessoa;
-	
 	String nomeArquivo = "alunos.txt";
 
 	public Pessoas(String nomePessoa, String emailPessoa, String strRendimento) {
@@ -32,14 +30,8 @@ public class Pessoas {
 		pessoa = new LinkedList<Pessoas>();
 	}
 
-
-
 	public String getNome() {
 		return nome;
-	}
-
-	public String getEmail() {
-		return email;
 	}
 
 	public int getNumPessoas() {

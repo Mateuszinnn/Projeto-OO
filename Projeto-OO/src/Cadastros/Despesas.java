@@ -9,7 +9,6 @@ import java.util.LinkedList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-
 public class Despesas extends Categoria {
 	private String descricao;
 	private String valor;
@@ -18,9 +17,7 @@ public class Despesas extends Categoria {
 	public float valorFinal;
 	int year = YearMonth.now().getYear();
 	int month = YearMonth.now().getMonthValue();
-	
 	List<Despesas> despesas;
-	
 	String nomeArquivo = "despesas"+"_"+month+"_"+year+".txt";
 	
 	public Despesas(String descricao, String categoria, String str) {
@@ -33,21 +30,11 @@ public class Despesas extends Categoria {
 		despesas = new LinkedList<Despesas>();
 	}
 
-	public String getDescricao() {
-		return descricao;
-	}
-
-
-	public String getCategoria() {
-		return categoria;
-	}
-
 	public float getValorFinal() {
 		return valorFinal;
 	}
 //Metodos especiais
 	public void cadastrarDespesas() {
-
 		 descricao = JOptionPane.showInputDialog("Informe a descrição da despesa(CAESB,CEB,Net,etc):");
 		 categoria = JOptionPane.showInputDialog("Informe a categoria da despesa(Agua,luz,telefonia,etc):");
 		 String str = JOptionPane.showInputDialog("informe o valor da despesa: ");

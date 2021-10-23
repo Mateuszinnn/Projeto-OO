@@ -4,14 +4,14 @@ import javax.swing.JOptionPane;
 import Cadastros.Pessoas;
 import Cadastros.Despesas;
 import Cadastros.Categoria;
-import Calculos.Calculos;
+import Calculos.CalculoIgualitario;
 
 public class Main_App {
 
 	static Pessoas pessoa= new Pessoas();
 	static Despesas despesa = new Despesas();
 	static Categoria categoria= new Categoria();
-	static Calculos calculo= new Calculos();
+	static CalculoIgualitario calculoI= new CalculoIgualitario();
 
 	public static void main(String[] args){
 		
@@ -45,11 +45,11 @@ public class Main_App {
 				break;
 				
 			case 4:
-				JOptionPane.showMessageDialog(null, calculo.calculoRegraIgualitaria());
+				JOptionPane.showMessageDialog(null, calculoI.calculoRegraIgualitaria());
 				break;
 				
 			case 5:
-				JOptionPane.showMessageDialog(null, calculo.calculoRegraProporcional());
+				
 				break;
 			case 0: 
 				//sair do programa
