@@ -16,6 +16,8 @@ public class Main_App {
 	public static void main(String[] args){
 		
 		int opcao;
+		pessoa.lerAlunos();
+		despesa.lerDespesas();
 		do { 
 			String strOpcao = JOptionPane.showInputDialog("Bem vindo ao App da República! \n\n"
 					+ "Escolha uma opção: \n\n"
@@ -29,13 +31,11 @@ public class Main_App {
 
 			switch (opcao) {
 			case 1:
-				pessoa.lerAlunos();
 				pessoa.cadastrarPessoas();
 				pessoa.gravarAlunos();
 				break;
 
 			case 2: 
-				despesa.lerDespesas();
 				despesa.cadastrarDespesas();
 				despesa.gravarDespesas();
 				break;

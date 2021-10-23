@@ -3,10 +3,8 @@ package Cadastros;
 import java.io.BufferedWriter;
 import java.time.YearMonth;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -56,7 +54,6 @@ public class Despesas extends Categoria {
 		 valor = str;
 		 valorFloat = Float.parseFloat(valor);
 		 valorFinal = valorFloat + valorFinal;
-		 JOptionPane.showMessageDialog(null, valorFinal);
 		 
 		 Despesas d = new Despesas(descricao,categoria,str); 
 		 
@@ -90,10 +87,10 @@ public class Despesas extends Categoria {
 		}
 	}
 	public void lerDespesas() {
-		FileInputStream in = null;
+		FileInputStream in = null;  
 		
 		try {
-			in = new FileInputStream(nomeArquivo);
+			in = new FileInputStream(nomeArquivo); 
 			
 			byte[] conteudoArquivo = in.readAllBytes();
 			
@@ -104,15 +101,12 @@ public class Despesas extends Categoria {
 			}
 			
 			String[] strDespesas = cadastro.split("\n");
-			
-			
 			for (String als : strDespesas) {
 				String[] str = als.split(";");
-				Despesas d = new Despesas(str[0], str[1], str[2]);
-				despesas.add(d);
+				Despesas a = new Despesas(str[0], str[1], str[2]);
+				despesas.add(a);
 			}
 		} catch (IOException e) {
-			
 		}
 	}
 }
