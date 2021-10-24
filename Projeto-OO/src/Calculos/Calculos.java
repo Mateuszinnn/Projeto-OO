@@ -33,12 +33,13 @@ public class Calculos implements Formulas_Calculo_Renda {
 
 	@Override
 	public float calculoRegraProporcional() {
-	return resultProporcional;
+		return resultProporcional;
+		
 	//resultProporcional = 
 	}
 	@Override
 	public float calculoRegraIgualitaria() {
-		
 		return resultIgualitario;
+		
 	}
 }

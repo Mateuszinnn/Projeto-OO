@@ -5,10 +5,13 @@ import Cadastros.Pessoas;
 
 public class CalculoIgualitario extends Calculos{
 
-	public CalculoIgualitario(int numPessoasIgualitario, int valorFinalIgualitario ) {
+	public CalculoIgualitario(int numPessoasIgualitario, float valorFinalIgualitario ) {
 		this.despesas.valorFinal = valorFinalIgualitario;
 		this.pessoas.numPessoas = numPessoasIgualitario;
 		
+	}
+	public CalculoIgualitario() {
+		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public float calculoRegraIgualitaria() {

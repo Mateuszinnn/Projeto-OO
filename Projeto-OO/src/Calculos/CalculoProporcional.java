@@ -11,7 +11,7 @@ public class CalculoProporcional extends Calculos{
 	}
 	@Override
 	public float calculoRegraProporcional() {
-	return resultProporcional;
+		return resultProporcional;
 	//resultProporcional = 
 	}
 }
