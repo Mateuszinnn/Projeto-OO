@@ -1,7 +1,4 @@
-package Calculos;
-
-import Cadastros.Despesas;
-import Cadastros.Pessoas;
+package Cadastros;
 
 public class CalculoProporcional extends Calculos{
 

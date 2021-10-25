@@ -3,15 +3,15 @@ package app;
 import javax.swing.JOptionPane;
 import Cadastros.Pessoas;
 import Cadastros.Despesas;
+import Cadastros.CalculoIgualitario;
 import Cadastros.Categoria;
-import Calculos.CalculoIgualitario;
 
 public class Main_App {
 
 	static Pessoas pessoa= new Pessoas();
 	static Despesas despesa = new Despesas();
 	static Categoria categoria= new Categoria();
-	static CalculoIgualitario calculoI= new CalculoIgualitario();
+	static CalculoIgualitario calculoI= new CalculoIgualitario(0, 0);
 
 	public static void main(String[] args){
 		
@@ -45,7 +45,8 @@ public class Main_App {
 				break;
 				
 			case 4:
-				JOptionPane.showMessageDialog(null, calculoI.calculoRegraIgualitaria());
+				CalculoIgualitario cI = new CalculoIgualitario(pessoa.getNumPessoas(),despesa.getValorFinal());
+				JOptionPane.showMessageDialog(null, cI.calculoRegraIgualitaria());
 				break;
 				
 			case 5:

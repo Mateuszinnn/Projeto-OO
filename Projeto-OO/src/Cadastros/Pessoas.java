@@ -14,7 +14,7 @@ public class Pessoas {
 	private String email;
 	private String totRendimento;
 	private float totRendimentoFloat;
-	public int numPessoas;
+	public float numPessoas;
 	private float Rendimento;
 	List<Pessoas> pessoa;
 	String nomeArquivo = "alunos.txt";
@@ -34,7 +34,7 @@ public class Pessoas {
 		return nome;
 	}
 
-	public int getNumPessoas() {
+	public float getNumPessoas() {
 		return numPessoas;
 	}
 	

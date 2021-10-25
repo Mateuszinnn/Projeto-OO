@@ -1,16 +1,10 @@
-package Calculos;
+package Cadastros;
 
 import javax.swing.JOptionPane;
-
-import Cadastros.Categoria;
-import Cadastros.Despesas;
-import Cadastros.Pessoas;
 
 
 
 public class Calculos implements Formulas_Calculo_Renda {
-	Pessoas pessoas = new Pessoas();
-	Despesas despesas = new Despesas();
 	
 	//protected Pessoas totRendimento;
 	//protected Pessoas numPessoas;
@@ -35,7 +29,6 @@ public class Calculos implements Formulas_Calculo_Renda {
 	public float calculoRegraProporcional() {
 		return resultProporcional;
 		
-	//resultProporcional = 
 	}
 	@Override
 	public float calculoRegraIgualitaria() {
