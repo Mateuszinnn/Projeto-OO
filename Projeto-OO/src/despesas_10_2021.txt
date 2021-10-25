@@ -1,2 +1,3 @@
 CEB;luz;600;
 Caesb;agua;300;
+Caesb;agua;1000;

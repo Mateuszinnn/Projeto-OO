@@ -1,4 +1,6 @@
-a;a;1;
-b;b;2;
-c;c;3;
-e;e;4;
+Mateus;mateus@email.com;10000;
+carlos;carlos@email.com;8000;
+andre;andre@email.com;7000;
+joao;joao@email.com;7000;
+rita;rita@email.com;300;
+rafa;rafa@email.com;9000;

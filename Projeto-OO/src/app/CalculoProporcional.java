@@ -9,6 +9,9 @@ public class CalculoProporcional extends Calculos{
 	@Override
 	public float calculoRegraProporcional() {
 		return resultProporcional;
-	//resultProporcional = 
+	// totRendimentoFloat - 100%
+	// valorFinal         - porcentagem
+	//resultPorcentagem = totRendimentoFloat * porcentagem = valorFinal * 100;
+	//resultProporcional = porcentagem * Rendimento;
 	}
 }
