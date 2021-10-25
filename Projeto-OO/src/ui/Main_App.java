@@ -1,10 +1,11 @@
-package app;
+package ui;
 
 import javax.swing.JOptionPane;
-import Cadastros.Pessoas;
-import Cadastros.Despesas;
-import Cadastros.CalculoIgualitario;
-import Cadastros.Categoria;
+
+import app.CalculoIgualitario;
+import app.Categoria;
+import app.Despesas;
+import app.Pessoas;
 
 public class Main_App {
 

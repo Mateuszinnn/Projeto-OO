@@ -1,4 +1,4 @@
-package Cadastros;
+package app;
 
 public class CalculoProporcional extends Calculos{
 

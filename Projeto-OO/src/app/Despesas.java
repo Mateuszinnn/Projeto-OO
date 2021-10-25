@@ -1,4 +1,4 @@
-package Cadastros;
+package app;
 
 import java.io.BufferedWriter;
 import java.time.YearMonth;

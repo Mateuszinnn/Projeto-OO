@@ -1,4 +1,2 @@
-net;internet;150;
-caesb;agua;200;
-ceb;luz;150;
-oi;celular;89;
+CEB;luz;600;
+Caesb;agua;300;

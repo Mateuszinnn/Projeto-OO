@@ -1,4 +1,4 @@
-mateus;mat;10000;
-joao;jo;2000;
-maria;ma;9000;
-andreia;and;8000;
+a;a;1;
+b;b;2;
+c;c;3;
+e;e;4;

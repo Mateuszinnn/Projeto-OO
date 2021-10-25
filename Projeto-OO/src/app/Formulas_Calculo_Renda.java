@@ -1,4 +1,4 @@
-package Cadastros;
+package app;
 
 public interface Formulas_Calculo_Renda {
 
