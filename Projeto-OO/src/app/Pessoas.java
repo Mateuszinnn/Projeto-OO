@@ -18,6 +18,7 @@ public class Pessoas {
 	public float Rendimento;
 	List<Pessoas> pessoa;
 	String nomeArquivo = "alunos.txt";
+	static Pessoas[] P = new Pessoas[0];
 
 	public Pessoas(String nomePessoa, String emailPessoa, String strRendimento) {
 		this.nome = nomePessoa;
@@ -61,6 +62,13 @@ public class Pessoas {
 		
 		Pessoas p = new Pessoas(nome,email,strRendimento);
 		
+		Pessoas[] rendP = new Pessoas[P.length+1];
+		
+		for (int i=0; i<P.length; i++) {
+			rendP[i] = P[i];  //copiando todas referencias de quadrados em temp
+		}
+		rendP[P.length] = p;
+		P = rendP;
 		boolean resposta = pessoa.add(p);
 		if (resposta) 
 			JOptionPane.showMessageDialog(null, "Aluno cadastrado com sucesso");

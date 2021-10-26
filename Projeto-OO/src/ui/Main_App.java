@@ -9,7 +9,7 @@ import app.Despesas;
 import app.Pessoas;
 
 public class Main_App {
-
+	static Pessoas[] P = new Pessoas[0];
 	static Pessoas pessoa= new Pessoas();
 	static Despesas despesa = new Despesas();
 	static Categoria categoria= new Categoria();
@@ -54,6 +54,9 @@ public class Main_App {
 				break;
 				
 			case 5:
+				for(int i=0; i<P.length;i++) {
+					
+				}
 				CalculoProporcional cP = new CalculoProporcional(pessoa.getRendimento(), pessoa.getTotRendimentoFloat(), despesa.getValorFinal(),pessoa.getNumPessoas());
 				JOptionPane.showMessageDialog(null, cP.calculoRegraProporcional());
 				break;
