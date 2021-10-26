@@ -12,10 +12,10 @@ import java.util.List;
 public class Pessoas {
 	private String nome;
 	private String email;
-	private String totRendimento;
+	public String totRendimento;
 	private float totRendimentoFloat;
 	public float numPessoas;
-	private float Rendimento;
+	public float Rendimento;
 	List<Pessoas> pessoa;
 	String nomeArquivo = "alunos.txt";
 
@@ -36,6 +36,14 @@ public class Pessoas {
 
 	public float getNumPessoas() {
 		return numPessoas;
+	}
+
+	public String getRendimento() {
+		return Rendimento;
+	}
+
+	public String getTotRendimento() {
+		return totRendimento;
 	}
 	
 //metodos especiais

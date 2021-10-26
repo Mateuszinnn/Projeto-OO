@@ -52,7 +52,7 @@ public class Main_App {
 				break;
 				
 			case 5:
-				CalculoProporcional cI = new CalculoIgualitario(pessoa.Rendimento, pessoa.totRendimento, despesa.getValorFinal());
+				CalculoProporcional cI = new CalculoIgualitario(pessoa.getRendimento(), pessoa.getTotRendimento(), despesa.getValorFinal());
 				JOptionPane.showMessageDialog(null, cI.calculoRegraProporcional());
 				break;
 			case 0: 
