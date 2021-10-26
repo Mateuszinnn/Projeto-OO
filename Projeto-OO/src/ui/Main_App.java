@@ -51,7 +51,8 @@ public class Main_App {
 				break;
 				
 			case 5:
-				
+				CalculoProporcional cI = new CalculoIgualitario(pessoa.Rendimento, pessoa.totRendimento, despesa.getValorFinal());
+				JOptionPane.showMessageDialog(null, cI.calculoRegraProporcional());
 				break;
 			case 0: 
 				//sair do programa
