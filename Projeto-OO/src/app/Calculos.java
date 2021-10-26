@@ -6,9 +6,6 @@ import javax.swing.JOptionPane;
 
 public class Calculos implements Formulas_Calculo_Renda {
 	
-	//protected Pessoas totRendimento;
-	//protected Pessoas numPessoas;
-	//protected Despesas valorFinal;
 	protected float resultIgualitario;
 	protected float resultProporcional;
 	

@@ -38,12 +38,12 @@ public class Pessoas {
 		return numPessoas;
 	}
 
-	public String getRendimento() {
+	public float getRendimento() {
 		return Rendimento;
 	}
 
-	public String getTotRendimento() {
-		return totRendimento;
+	public float getTotRendimentoFloat() {
+		return totRendimentoFloat;
 	}
 	
 //metodos especiais
