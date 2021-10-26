@@ -3,6 +3,7 @@ package ui;
 import javax.swing.JOptionPane;
 
 import app.CalculoIgualitario;
+import app.CalculoProporcional;
 import app.Categoria;
 import app.Despesas;
 import app.Pessoas;
@@ -52,8 +53,8 @@ public class Main_App {
 				break;
 				
 			case 5:
-				CalculoProporcional cI = new CalculoIgualitario(pessoa.getRendimento(), pessoa.getTotRendimento(), despesa.getValorFinal());
-				JOptionPane.showMessageDialog(null, cI.calculoRegraProporcional());
+				CalculoProporcional cP = new CalculoProporcional(pessoa.getRendimento(), pessoa.gettotRendimentoFloat(), despesa.getValorFinal());
+				JOptionPane.showMessageDialog(null, cP.calculoRegraProporcional());
 				break;
 			case 0: 
 				//sair do programa
