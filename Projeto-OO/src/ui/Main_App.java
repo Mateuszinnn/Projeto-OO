@@ -13,6 +13,7 @@ public class Main_App {
 	static Despesas despesa = new Despesas();
 	static Categoria categoria= new Categoria();
 	static CalculoIgualitario calculoI= new CalculoIgualitario(0, 0);
+	static CalculoProporcional calculoI= new CalculoProporcional(0, 0, 0);
 
 	public static void main(String[] args){
 		
