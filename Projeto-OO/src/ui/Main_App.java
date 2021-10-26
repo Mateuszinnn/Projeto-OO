@@ -14,7 +14,7 @@ public class Main_App {
 	static Despesas despesa = new Despesas();
 	static Categoria categoria= new Categoria();
 	static CalculoIgualitario calculoI= new CalculoIgualitario(0, 0);
-	static CalculoProporcional calculoP= new CalculoProporcional(0, 0, 0, 0);
+	static CalculoProporcional calculoP= new CalculoProporcional(0, 0, 0);
 	private static int i;
 
 	public static void main(String[] args){
@@ -37,6 +37,7 @@ public class Main_App {
 			case 1:
 				pessoa.cadastrarPessoas();
 				pessoa.gravarAlunos();
+				JOptionPane.showMessageDialog(null, P.length);
 				break;
 
 			case 2: 
@@ -55,10 +56,13 @@ public class Main_App {
 				
 			case 5:
 				for(int i=0; i<P.length;i++) {
+					CalculoProporcional cP = new CalculoProporcional(pessoa.getRendimento(), pessoa.getTotRendimentoFloat(), despesa.getValorFinal());
+					String resposta =  P[i].getNome()+" tera de pagar: "+ cP.calculoRegraProporcional()+" reais\n";
 					
+					JOptionPane.showMessageDialog(null, resposta);
 				}
-				CalculoProporcional cP = new CalculoProporcional(pessoa.getRendimento(), pessoa.getTotRendimentoFloat(), despesa.getValorFinal(),pessoa.getNumPessoas());
-				JOptionPane.showMessageDialog(null, cP.calculoRegraProporcional());
+				//CalculoProporcional cP = new CalculoProporcional(pessoa.getRendimento(), pessoa.getTotRendimentoFloat(), despesa.getValorFinal(),pessoa.getNumPessoas());
+	
 				break;
 			case 0: 
 				//sair do programa

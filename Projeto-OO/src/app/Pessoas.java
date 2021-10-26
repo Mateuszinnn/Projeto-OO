@@ -65,7 +65,7 @@ public class Pessoas {
 		Pessoas[] rendP = new Pessoas[P.length+1];
 		
 		for (int i=0; i<P.length; i++) {
-			rendP[i] = P[i];  //copiando todas referencias de quadrados em temp
+			rendP[i] = P[i];  //copiando todas referencias de pessoas em rendP
 		}
 		rendP[P.length] = p;
 		P = rendP;
