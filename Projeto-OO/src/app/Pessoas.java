@@ -42,8 +42,8 @@ public class Pessoas {
 		return Rendimento;
 	}
 
-	public String getTotRendimento() {
-		return totRendimento;
+	public float getTotRendimentoFloat() {
+		return totRendimentoFloat;
 	}
 	public float gettotRendimentoFloat() {
 		return totRendimentoFloat;

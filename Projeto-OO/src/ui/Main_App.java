@@ -14,7 +14,8 @@ public class Main_App {
 	static Despesas despesa = new Despesas();
 	static Categoria categoria= new Categoria();
 	static CalculoIgualitario calculoI= new CalculoIgualitario(0, 0);
-	static CalculoProporcional calculoP= new CalculoProporcional(0, 0, 0);
+	static CalculoProporcional calculoP= new CalculoProporcional(0, 0, 0, 0);
+	private static int i;
 
 	public static void main(String[] args){
 		
@@ -53,7 +54,7 @@ public class Main_App {
 				break;
 				
 			case 5:
-				CalculoProporcional cP = new CalculoProporcional(pessoa.getRendimento(), pessoa.gettotRendimentoFloat(), despesa.getValorFinal());
+				CalculoProporcional cP = new CalculoProporcional(pessoa.getRendimento(), pessoa.getTotRendimentoFloat(), despesa.getValorFinal(),pessoa.getNumPessoas());
 				JOptionPane.showMessageDialog(null, cP.calculoRegraProporcional());
 				break;
 			case 0: 
