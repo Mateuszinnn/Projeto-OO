@@ -46,21 +46,17 @@ public class Pessoas {
 	public float getTotRendimentoFloat() {
 		return totRendimentoFloat;
 	}
-	public float gettotRendimentoFloat() {
-		return totRendimentoFloat;
-	}
 	
 //metodos especiais
 	public void cadastrarPessoas() {
 		nome = JOptionPane.showInputDialog("Informe o nome da pessoa:");
 		email = JOptionPane.showInputDialog("Informe o email da pessoa:");
-		String strRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
-		totRendimento = strRendimento;
-		Rendimento= Float.parseFloat(totRendimento);
+		String totRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
+		float Rendimento = Float.parseFloat(totRendimento);
 		totRendimentoFloat= Rendimento + totRendimentoFloat;
 		numPessoas = numPessoas+1;
 		
-		Pessoas p = new Pessoas(nome,email,strRendimento);
+		Pessoas p = new Pessoas(nome,email,totRendimento);
 		System.out.println(p);
 		
 		Pessoas[] rendP = new Pessoas[P.length+1];
@@ -71,6 +67,8 @@ public class Pessoas {
 		rendP[P.length] = p;
 		P = rendP;
 		boolean resposta = pessoa.add(p);
+		System.out.println(Pessoas.P[0].getRendimento());
+		System.out.println(Pessoas.P[0].getTotRendimentoFloat());
 		if (resposta) 
 			JOptionPane.showMessageDialog(null, "Aluno cadastrado com sucesso");
 		return;

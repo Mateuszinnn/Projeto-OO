@@ -36,7 +36,8 @@ public class Main_App {
 			case 1:
 				pessoa.cadastrarPessoas();
 				pessoa.gravarAlunos();
-				JOptionPane.showMessageDialog(null, Pessoas.P.length);
+				
+				System.out.println(Pessoas.P[0]);
 				break;
 
 			case 2: 
@@ -59,7 +60,7 @@ public class Main_App {
 					//System.out.println(Pessoas.P[i][2]);
 					//var x = pessoa.lerAlunos();
 					//System.out.println(x);
-					System.out.println(pessoa.P[0].getRendimento());
+					System.out.println(Pessoas.P[i].getRendimento());
 					//System.out.println(Pessoas.P[i].gettotRendimentoFloat());
 					//System.out.println(despesa.getValorFinal());
 					
@@ -79,6 +80,7 @@ public class Main_App {
 				break;
 			}
 		} while (opcao != 0);
+		
 		
 	}
 
