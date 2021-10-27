@@ -55,9 +55,15 @@ public class Main_App {
 				
 			case 5:
 				for(int i=0; i<Pessoas.P.length;i++) {
-					CalculoProporcional cP = new CalculoProporcional(pessoa.getRendimento(), pessoa.getTotRendimentoFloat(), despesa.getValorFinal());
-					String resposta =  Pessoas.P[i].getNome()+" tera de pagar: "+ cP.calculoRegraProporcional()+" reais\n";
+					CalculoProporcional cP = new CalculoProporcional(Pessoas.P[i].getRendimento(),Pessoas.P[i].getTotRendimentoFloat(), despesa.getValorFinal());
+					//System.out.println(Pessoas.P[i][2]);
+					//var x = pessoa.lerAlunos();
+					//System.out.println(x);
+					System.out.println(pessoa.P[0].getRendimento());
+					//System.out.println(Pessoas.P[i].gettotRendimentoFloat());
+					//System.out.println(despesa.getValorFinal());
 					
+					String resposta =  Pessoas.P[i].getNome()+" tera de pagar: "+ cP.calculoRegraProporcional()+" reais\n";
 					JOptionPane.showMessageDialog(null, resposta);
 				}
 				//CalculoProporcional cP = new CalculoProporcional(pessoa.getRendimento(), pessoa.getTotRendimentoFloat(), despesa.getValorFinal(),pessoa.getNumPessoas());

@@ -61,6 +61,7 @@ public class Pessoas {
 		numPessoas = numPessoas+1;
 		
 		Pessoas p = new Pessoas(nome,email,strRendimento);
+		System.out.println(p);
 		
 		Pessoas[] rendP = new Pessoas[P.length+1];
 		

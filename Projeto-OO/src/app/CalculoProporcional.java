@@ -1,25 +1,24 @@
 package app;
-
+ 
 import javax.swing.JOptionPane;
-
+ 
 public class CalculoProporcional extends Calculos{
-	private float rendaPessoal;
-	private float rendaTotal;
-	private float preco;
-	private float porcentagem;
-
-	public CalculoProporcional(float rendaPessoal, float rendaTotal, float preco) {
-		this.rendaPessoal = rendaPessoal;
-		this.rendaTotal = rendaTotal;
-		this.preco = preco;
-	}
-	@Override
-	public float calculoRegraProporcional() {
-		porcentagem= (preco*100)/rendaTotal;
-			return (porcentagem/100)*rendaPessoal;
-	// totRendimentoFloat - 100%
-	// valorFinal         - porcentagem
-	//resultPorcentagem = totRendimentoFloat * porcentagem = valorFinal * 100;
-	//resultProporcional = porcentagem * Rendimento;
-	}
+   private float rendaPessoal; // valor recebido individualmente
+   private float rendaTotal; // valor total, somatório de todas as pessoas
+   private float despesa; // valor total da despesa
+   // private float porcentagem;
+ 
+   public CalculoProporcional(float rendaPessoal, float rendaTotal, float despesa) {
+       this.rendaPessoal = rendaPessoal;
+       this.rendaTotal = rendaTotal;
+       this.despesa = despesa;
+   }
+   @Override
+   public float calculoRegraProporcional() {
+           return (rendaPessoal*despesa)/rendaTotal;
+   // totRendimentoFloat - 100%
+   // valorFinal         - porcentagem
+   //resultPorcentagem = totRendimentoFloat * porcentagem = valorFinal * 100;
+   //resultProporcional = porcentagem * Rendimento;
+   }
 }
