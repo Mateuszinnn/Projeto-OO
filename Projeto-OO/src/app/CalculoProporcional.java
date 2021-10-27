@@ -14,8 +14,6 @@ public class CalculoProporcional extends Calculos{
 	}
 	@Override
 	public float calculoRegraProporcional() {
-		JOptionPane.showMessageDialog(null, preco);
-		JOptionPane.showMessageDialog(null, rendaTotal);
 		
 			return ((preco*100)/rendaTotal)*rendaPessoal;
 	// totRendimentoFloat - 100%

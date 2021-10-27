@@ -18,7 +18,7 @@ public class Pessoas {
 	public float Rendimento;
 	List<Pessoas> pessoa;
 	String nomeArquivo = "alunos.txt";
-	static Pessoas[] P = new Pessoas[0];
+	public static Pessoas[] P = new Pessoas[0];
 
 	public Pessoas(String nomePessoa, String emailPessoa, String strRendimento) {
 		this.nome = nomePessoa;

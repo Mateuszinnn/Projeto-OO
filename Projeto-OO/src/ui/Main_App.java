@@ -9,7 +9,6 @@ import app.Despesas;
 import app.Pessoas;
 
 public class Main_App {
-	static Pessoas[] P = new Pessoas[0];
 	static Pessoas pessoa= new Pessoas();
 	static Despesas despesa = new Despesas();
 	static Categoria categoria= new Categoria();
@@ -37,7 +36,7 @@ public class Main_App {
 			case 1:
 				pessoa.cadastrarPessoas();
 				pessoa.gravarAlunos();
-				JOptionPane.showMessageDialog(null, P.length);
+				JOptionPane.showMessageDialog(null, Pessoas.P.length);
 				break;
 
 			case 2: 
@@ -55,9 +54,9 @@ public class Main_App {
 				break;
 				
 			case 5:
-				for(int i=0; i<P.length;i++) {
+				for(int i=0; i<Pessoas.P.length;i++) {
 					CalculoProporcional cP = new CalculoProporcional(pessoa.getRendimento(), pessoa.getTotRendimentoFloat(), despesa.getValorFinal());
-					String resposta =  P[i].getNome()+" tera de pagar: "+ cP.calculoRegraProporcional()+" reais\n";
+					String resposta =  Pessoas.P[i].getNome()+" tera de pagar: "+ cP.calculoRegraProporcional()+" reais\n";
 					
 					JOptionPane.showMessageDialog(null, resposta);
 				}
