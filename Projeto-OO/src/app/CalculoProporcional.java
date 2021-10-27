@@ -6,6 +6,7 @@ public class CalculoProporcional extends Calculos{
 	private float rendaPessoal;
 	private float rendaTotal;
 	private float preco;
+	private float porcentagem;
 
 	public CalculoProporcional(float rendaPessoal, float rendaTotal, float preco) {
 		this.rendaPessoal = rendaPessoal;
@@ -14,8 +15,8 @@ public class CalculoProporcional extends Calculos{
 	}
 	@Override
 	public float calculoRegraProporcional() {
-		
-			return ((preco*100)/rendaTotal)*rendaPessoal;
+		porcentagem= (preco*100)/rendaTotal;
+			return (porcentagem/100)*rendaPessoal;
 	// totRendimentoFloat - 100%
 	// valorFinal         - porcentagem
 	//resultPorcentagem = totRendimentoFloat * porcentagem = valorFinal * 100;
