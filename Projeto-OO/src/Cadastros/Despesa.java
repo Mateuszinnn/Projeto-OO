@@ -245,8 +245,9 @@ public class Despesa {
 		}
 	}
 
+	@Override
 	public String toString() {
-		return descricao + ";" + categoria + ";" + valor + ";";
+		return descricao + ";" + this.categoria.getDescricao() + ";" + valor;
 	}
 
 	public void gravarDespesas() {
