@@ -250,23 +250,8 @@ public class Despesa {
 		return descricao + ";" + this.categoria.getDescricao() + ";" + valor;
 	}
 
-	public void gravarDespesas() {
-		BufferedWriter buffer = null;
-		FileWriter out = null;
-
-		try {
-			out = new FileWriter(nomeArquivo);
-			buffer = new BufferedWriter(out);
-
-			for (Despesa d : despesas) {
-				buffer.write(d.toString());
-				buffer.write('\n');
-			}
-
-			buffer.close();
-		} catch (IOException e) {
-			// TODO: handle exception
-		}
+	public void gravarDespesa() {
+		Functions.gravarArquivo("despesas.txt", toString());
 	}
 
 	public void lerDespesas() {
