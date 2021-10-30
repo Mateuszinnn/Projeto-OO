@@ -3,25 +3,22 @@ package Calculos;
 import javax.swing.JOptionPane;
 
 import Cadastros.Categoria;
-import Cadastros.Despesas;
+import Cadastros.Despesa;
 import Cadastros.Pessoas;
-
-
 
 public class Calculos implements Formulas_Calculo_Renda {
 	Pessoas pessoas = new Pessoas();
-	Despesas despesas = new Despesas();
-	
-	//protected Pessoas totRendimento;
-	//protected Pessoas numPessoas;
-	//protected Despesas valorFinal;
+	Despesa despesas = new Despesa();
+
+	// protected Pessoas totRendimento;
+	// protected Pessoas numPessoas;
+	// protected Despesas valorFinal;
 	protected float resultIgualitario;
 	protected float resultProporcional;
-	
+
 	public Calculos() {
-		
+
 	}
-	
 
 	public float getResultIgualitario() {
 		return resultIgualitario;
@@ -33,12 +30,13 @@ public class Calculos implements Formulas_Calculo_Renda {
 
 	@Override
 	public float calculoRegraProporcional() {
-	return resultProporcional;
-	//resultProporcional = 
+		return resultProporcional;
+		// resultProporcional =
 	}
+
 	@Override
 	public float calculoRegraIgualitaria() {
-		
+
 		return resultIgualitario;
 	}
 }

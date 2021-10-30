@@ -2,31 +2,27 @@ package app;
 
 import javax.swing.JOptionPane;
 import Cadastros.Pessoas;
-import Cadastros.Despesas;
+import Cadastros.Despesa;
 import Cadastros.Categoria;
 import Calculos.CalculoIgualitario;
 
 public class Main_App {
 
-	static Pessoas pessoa= new Pessoas();
-	static Despesas despesa = new Despesas();
-	static Categoria categoria= new Categoria();
-	static CalculoIgualitario calculoI= new CalculoIgualitario();
+	static Pessoas pessoa = new Pessoas();
+	static Despesa despesa = new Despesa();
+	static Categoria categoria = new Categoria();
+	static CalculoIgualitario calculoI = new CalculoIgualitario();
 
-	public static void main(String[] args){
-		
+	public static void main(String[] args) {
+
 		int opcao;
 		pessoa.lerAlunos();
 		despesa.lerDespesas();
-		do { 
-			String strOpcao = JOptionPane.showInputDialog("Bem vindo ao App da República! \n\n"
-					+ "Escolha uma opção: \n\n"
-					+ "1 - Cadastrar Pessoas\n"
-					+ "2 - Cadastrar Despesas\n"
-					+ "3 - Cadastrar Categoria\n"
-					+ "4 - Calcular repartição de despesas - Regra igualitária\n"
-					+ "5 - Calcular repartição de despesas - Regra proporcional\n"
-					+ "0 - Sair do programa");
+		do {
+			String strOpcao = JOptionPane.showInputDialog("Bem vindo ao App da Repï¿½blica! \n\n"
+					+ "Escolha uma opï¿½ï¿½o: \n\n" + "1 - Cadastrar Pessoas\n" + "2 - Cadastrar Despesas\n"
+					+ "3 - Cadastrar Categoria\n" + "4 - Calcular repartiï¿½ï¿½o de despesas - Regra igualitï¿½ria\n"
+					+ "5 - Calcular repartiï¿½ï¿½o de despesas - Regra proporcional\n" + "0 - Sair do programa");
 			opcao = Integer.parseInt(strOpcao);
 
 			switch (opcao) {
@@ -35,34 +31,33 @@ public class Main_App {
 				pessoa.gravarAlunos();
 				break;
 
-			case 2: 
+			case 2:
 				despesa.cadastrarDespesas();
 				despesa.gravarDespesas();
 				break;
-				
-			case 3: 
+
+			case 3:
 				categoria.cadastrarCategoria();
 				break;
-				
+
 			case 4:
 				JOptionPane.showMessageDialog(null, calculoI.calculoRegraIgualitaria());
 				break;
-				
+
 			case 5:
-				
+
 				break;
-			case 0: 
-				//sair do programa
+			case 0:
+				// sair do programa
 				break;
 
 			default:
-				//Opcao invalida
-				JOptionPane.showMessageDialog(null, "Opcão Inválida!");
+				// Opcao invalida
+				JOptionPane.showMessageDialog(null, "Opcï¿½o Invï¿½lida!");
 				break;
 			}
 		} while (opcao != 0);
-		
-	}
 
+	}
 
 }
