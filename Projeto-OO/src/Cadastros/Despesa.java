@@ -73,14 +73,13 @@ public class Despesa {
 
 							do {
 								option = JOptionPane.showInputDialog(
-										"Gostaria de prosseguir com o cadastramento da despesa?\n 1) Sim\n2) Não");
+										"Gostaria de prosseguir com o cadastramento da despesa?\n ) Sim\n2) Não");
 								isValid = Functions.isInteger(option, "Opção inválida! Tente novamente");
 
 								if (isValid) {
 									if (Functions.rangeOfValues(1, 2, optionInt)) {
 										if (Integer.parseInt(option) == 1) {
 											cadastrarDespesa();
-											gravarDespesa();
 											return;
 										} else {
 											return;
@@ -93,7 +92,7 @@ public class Despesa {
 							} while (!isValid);
 
 						} else {
-							System.exit(0);
+							return;
 						}
 
 					} else {
