@@ -69,6 +69,7 @@ public class Despesa {
 
 					if (Functions.rangeOfValues(1, 2, optionInt)) {
 						if (optionInt == 1) {
+							//Todo Criar exception CategoriaNaoInformadaException.
 							this.categoria.cadastrarCategoria();
 
 							do {
