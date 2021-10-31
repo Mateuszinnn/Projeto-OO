@@ -46,5 +46,19 @@ public class Functions {
         }
 
     }
+    public static boolean isInteger(String string, String mensagem) {
+        if (string.isEmpty()) {
+            return false;
+        }
+
+        try {
+            Integer.parseInt(string);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, mensagem);
+            return false;
+        }
+
+        return true;
+    }
     
 }
