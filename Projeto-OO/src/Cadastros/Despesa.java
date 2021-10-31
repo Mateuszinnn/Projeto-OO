@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import Exceptions.DescricaoNaoInformadaException;
 
 public class Despesa {
 
@@ -39,7 +40,19 @@ public class Despesa {
 		Boolean isValid = true;
 		int optionInt;
 
-		this.descricao = JOptionPane.showInputDialog("Informe a descrição da Despesa: ");
+		do {
+
+			try {
+				this.descricao = JOptionPane.showInputDialog("Informe a descrição da Despesa: ");
+				verificarDescricao(this.descricao, "Informe uma descriçao válida.");
+				isValid = true;
+
+			} catch (DescricaoNaoInformadaException e) {
+				isValid = false;
+				JOptionPane.showMessageDialog(null, e.getMessage());
+			}
+
+		} while (!isValid);
 
 		do {
 			value = JOptionPane.showInputDialog("Informe o valor da despesa: ");
@@ -253,6 +266,12 @@ public class Despesa {
 
 	public void gravarDespesa() {
 		Functions.gravarArquivo("despesas.txt", toString());
+	}
+
+	public void verificarDescricao(String descricao, String mensagem) throws DescricaoNaoInformadaException {
+		if (descricao.isBlank()) {
+			throw new DescricaoNaoInformadaException(mensagem);
+		}
 	}
 
 	public void lerDespesas() {

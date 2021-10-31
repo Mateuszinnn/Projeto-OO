@@ -1,6 +1,6 @@
 package Exceptions;
 
-public class DescricaoNaoInformadaException extends Exception {
+public class DescricaoNaoInformadaException extends RuntimeException {
     public DescricaoNaoInformadaException() {
         super();
     }
