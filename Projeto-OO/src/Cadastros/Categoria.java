@@ -6,22 +6,26 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 public class Categoria {
-	private String descricao;
-	private List<String> subCategorias = new ArrayList<String>();
+    private String descricao;
+    private List<String> subCategorias = new ArrayList<String>();
 
-	public Categoria(String descricao, List<String> subCategoria) {
-		this.descricao = descricao;
-		this.subCategorias = subCategoria;
-	}
+    public Categoria() {
+    }
 
-	public String getNomeSubCategoria(int index) {
-		return subCategorias.get(index);
-	}
-	public void gravarCategoria() {
+    public Categoria(String descricao, List<String> subCategoria) {
+        this.descricao = descricao;
+        this.subCategorias = subCategoria;
+    }
+
+    public String getNomeSubCategoria(int index) {
+        return subCategorias.get(index);
+    }
+
+    public void gravarCategoria() {
         Functions.gravarArquivo("categorias.txt", toString());
     }
 
-	public void cadastrarCategoria() {
+    public void cadastrarCategoria() {
         String subCategoria, option;
         Boolean isValid = false;
 
@@ -57,7 +61,7 @@ public class Categoria {
         }
     }
 
-	public void lerCategoria() {
+    public void lerCategoria() {
         String fileText = Functions.lerArquivo("categorias.txt");
 
         if (fileText.isEmpty()) {
@@ -83,7 +87,7 @@ public class Categoria {
         }
     }
 
-	public String getDescricao() {
+    public String getDescricao() {
         return descricao;
     }
 
@@ -91,7 +95,7 @@ public class Categoria {
         this.descricao = descricao;
     }
 
-	@Override
+    @Override
     public String toString() {
         String subCategorias = "";
 

@@ -1,4 +1,5 @@
 package Cadastros;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
@@ -25,6 +26,7 @@ public class Functions {
             JOptionPane.showMessageDialog(null, "Ocorreu uma falha durante a gravação do arquivo.");
         }
     }
+
     public static String lerArquivo(String nomeDoArquivo) {
         try {
             BufferedReader myBuffer = new BufferedReader(
@@ -46,6 +48,7 @@ public class Functions {
         }
 
     }
+
     public static boolean isInteger(String string, String mensagem) {
         if (string.isEmpty()) {
             return false;
@@ -60,6 +63,22 @@ public class Functions {
 
         return true;
     }
+
+    public static boolean isDouble(String string, String mensagem) {
+        if (string.isEmpty()) {
+            return false;
+        }
+
+        try {
+            Double.parseDouble(string);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, mensagem);
+            return false;
+        }
+
+        return true;
+    }
+
     public static boolean rangeOfValues(int min, int max, int option) {
 
         if (option < min || option > max) {
@@ -70,5 +89,5 @@ public class Functions {
         }
 
     }
-    
+
 }

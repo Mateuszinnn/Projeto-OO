@@ -29,9 +29,9 @@ public class Despesa {
 		this.month = month;
 	}
 
-	public float getValorFinal() {
-		return valorFinal;
-	}
+	// public float getValorFinal() {
+	// return valorFinal;
+	// }
 
 	// Metodos especiais
 	public void cadastrarDespesa() {
@@ -69,7 +69,7 @@ public class Despesa {
 
 					if (Functions.rangeOfValues(1, 2, optionInt)) {
 						if (optionInt == 1) {
-							//Todo Criar exception CategoriaNaoInformadaException.
+							// Todo Criar exception CategoriaNaoInformadaException.
 							this.categoria.cadastrarCategoria();
 
 							do {
