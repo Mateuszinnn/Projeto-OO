@@ -60,5 +60,15 @@ public class Functions {
 
         return true;
     }
+    public static boolean rangeOfValues(int min, int max, int option) {
+
+        if (option < min || option > max) {
+            JOptionPane.showMessageDialog(null, "Opção inválida! Tente novamente.");
+            return false;
+        } else {
+            return true;
+        }
+
+    }
     
 }
