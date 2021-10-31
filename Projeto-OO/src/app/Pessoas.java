@@ -20,15 +20,21 @@ public class Pessoas {
 	String nomeArquivo = "alunos.txt";
 	public static Pessoas[] P = new Pessoas[0];
 
-	public Pessoas(String nomePessoa, String emailPessoa, String strRendimento) {
+	public Pessoas(String nomePessoa, String emailPessoa, float strRendimento) {
 		this.nome = nomePessoa;
 		this.email = emailPessoa;
-		this.totRendimento = strRendimento;
+		this.Rendimento = strRendimento;
 		this.numPessoas = 0;
 	}
 
 	public Pessoas() {
 		pessoa = new LinkedList<Pessoas>();
+	}
+
+	public Pessoas(String nomePessoa, String emailPessoa, String string) {
+		this.nome=nomePessoa;
+		this.email=emailPessoa;
+		this.totRendimento=string;
 	}
 
 	public String getNome() {
@@ -52,12 +58,11 @@ public class Pessoas {
 		nome = JOptionPane.showInputDialog("Informe o nome da pessoa:");
 		email = JOptionPane.showInputDialog("Informe o email da pessoa:");
 		String totRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
-		float Rendimento = Float.parseFloat(totRendimento);
+		Rendimento = Float.parseFloat(totRendimento);
 		totRendimentoFloat= Rendimento + totRendimentoFloat;
 		numPessoas = numPessoas+1;
 		
-		Pessoas p = new Pessoas(nome,email,totRendimento);
-		System.out.println(p);
+		Pessoas p = new Pessoas(nome,email,Rendimento);
 		
 		Pessoas[] rendP = new Pessoas[P.length+1];
 		
@@ -67,8 +72,6 @@ public class Pessoas {
 		rendP[P.length] = p;
 		P = rendP;
 		boolean resposta = pessoa.add(p);
-		System.out.println(Pessoas.P[0].getRendimento());
-		System.out.println(Pessoas.P[0].getTotRendimentoFloat());
 		if (resposta) 
 			JOptionPane.showMessageDialog(null, "Aluno cadastrado com sucesso");
 		return;

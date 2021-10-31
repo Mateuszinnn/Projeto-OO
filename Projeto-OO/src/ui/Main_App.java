@@ -13,8 +13,7 @@ public class Main_App {
 	static Despesas despesa = new Despesas();
 	static Categoria categoria= new Categoria();
 	static CalculoIgualitario calculoI= new CalculoIgualitario(0, 0);
-	static CalculoProporcional calculoP= new CalculoProporcional(0, 0, 0);
-	private static int i;
+	static CalculoProporcional calculoP= new CalculoProporcional(0, 0);
 
 	public static void main(String[] args){
 		
@@ -36,8 +35,6 @@ public class Main_App {
 			case 1:
 				pessoa.cadastrarPessoas();
 				pessoa.gravarAlunos();
-				
-				System.out.println(Pessoas.P[0]);
 				break;
 
 			case 2: 
@@ -56,15 +53,8 @@ public class Main_App {
 				
 			case 5:
 				for(int i=0; i<Pessoas.P.length;i++) {
-					CalculoProporcional cP = new CalculoProporcional(Pessoas.P[i].getRendimento(),Pessoas.P[i].getTotRendimentoFloat(), despesa.getValorFinal());
-					//System.out.println(Pessoas.P[i][2]);
-					//var x = pessoa.lerAlunos();
-					//System.out.println(x);
-					System.out.println(Pessoas.P[i].getRendimento());
-					//System.out.println(Pessoas.P[i].gettotRendimentoFloat());
-					//System.out.println(despesa.getValorFinal());
-					
-					String resposta =  Pessoas.P[i].getNome()+" tera de pagar: "+ cP.calculoRegraProporcional()+" reais\n";
+					CalculoProporcional cP = new CalculoProporcional( pessoa.getTotRendimentoFloat(), despesa.getValorFinal());
+					String resposta =  Pessoas.P[i].getNome()+" tera de pagar: "+ Pessoas.P[i].getRendimento()*cP.calculoRegraProporcional()+" reais\n";
 					JOptionPane.showMessageDialog(null, resposta);
 				}
 				//CalculoProporcional cP = new CalculoProporcional(pessoa.getRendimento(), pessoa.getTotRendimentoFloat(), despesa.getValorFinal(),pessoa.getNumPessoas());

@@ -47,7 +47,6 @@ public class Despesas extends Categoria {
 		 boolean resposta = despesas.add(d);
 			if (resposta) 
 				JOptionPane.showMessageDialog(null, "Despesa cadastrada com sucesso");
-				JOptionPane.showMessageDialog(null, valorFinal);
 			return;
 	}
 	
