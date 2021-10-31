@@ -82,7 +82,7 @@ public class Categoria {
 
         }
     }
-	
+
 	public String getDescricao() {
         return descricao;
     }
@@ -91,5 +91,15 @@ public class Categoria {
         this.descricao = descricao;
     }
 
+	@Override
+    public String toString() {
+        String subCategorias = "";
+
+        for (String string : this.subCategorias) {
+            subCategorias = subCategorias + string + ";";
+        }
+
+        return descricao + ";" + subCategorias;
+    }
 
 }
