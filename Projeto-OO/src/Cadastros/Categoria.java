@@ -57,5 +57,31 @@ public class Categoria {
         }
     }
 
+	public void lerCategoria() {
+        String fileText = Functions.lerArquivo("categorias.txt");
+
+        if (fileText.isEmpty()) {
+            Boolean isValid = false;
+
+            do {
+
+                String option = JOptionPane.showInputDialog(
+                        "Não encontramos nenhuma categoria cadastrada.\nGostaria de realizar o cadastro?\n1) - Sim\n2) - Não");
+
+                isValid = Functions.isInteger(option, "Opção inválida! Tente novamente");
+
+                if (isValid) {
+                    if (Functions.rangeOfValues(1, 2, Integer.parseInt(option))) {
+                        cadastrarCategoria();
+                    } else {
+                        isValid = false;
+                    }
+                }
+
+            } while (!isValid);
+
+        }
+    }
+
 
 }
