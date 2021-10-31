@@ -135,7 +135,12 @@ public class Despesa {
 		do {
 			option = JOptionPane.showInputDialog("Escolha a categoria desejada: \n" + ImprimirCategorias);
 
-			isValid = Functions.isInteger(option, "Opção inválida! Tente novamente");
+			try {
+				isValid = Functions.isInteger(option, "Opção inválida! Tente novamente");
+			} catch (DescricaoNaoInformadaException e) {
+				isValid = false;
+				JOptionPane.showMessageDialog(null, e.getMessage());
+			}
 
 			if (isValid) {
 				if (Functions.rangeOfValues(1, index, Integer.parseInt(option))) {
@@ -206,7 +211,7 @@ public class Despesa {
 
 							} while (!isValid);
 						}
-
+						JOptionPane.showMessageDialog(null, "Despesa cadastrada com sucesso");
 						gravarDespesa();
 						return;
 					} else {
