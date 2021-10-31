@@ -17,6 +17,7 @@ public class Pessoas {
 	public float numPessoas;
 	public float Rendimento;
 	List<Pessoas> pessoa;
+	List<Pessoas> pessoas;
 	String nomeArquivo = "alunos.txt";
 	public static Pessoas[] P = new Pessoas[0];
 
@@ -35,6 +36,7 @@ public class Pessoas {
 	
 	public Pessoas() {
 		pessoa = new LinkedList<Pessoas>();
+		pessoas = new LinkedList<Pessoas>();
 	}
 
 	public String getNome() {
@@ -72,7 +74,7 @@ public class Pessoas {
 		rendP[P.length] = p;
 		P = rendP;
 		boolean resposta = pessoa.add(p);
-		pessoa.add(s);
+		pessoas.add(s);
 		if (resposta) 
 			JOptionPane.showMessageDialog(null, "Aluno cadastrado com sucesso");
 		return;
@@ -90,7 +92,7 @@ public class Pessoas {
 			out = new FileWriter(nomeArquivo);
 			buffer = new BufferedWriter(out);
 			
-			for (Pessoas s : pessoa) {
+			for (Pessoas s : pessoas) {
 				buffer.write(s.toString());
 				buffer.write('\n');
 			}
@@ -117,7 +119,7 @@ public class Pessoas {
 			for (String als : strAlunos) {
 				String[] str = als.split(";");
 				Pessoas s = new Pessoas(str[0], str[1], str[2]);
-				pessoa.add(s);
+				pessoas.add(s);
 			}
 		} catch (IOException e) {
 			// TODO: handle exception
