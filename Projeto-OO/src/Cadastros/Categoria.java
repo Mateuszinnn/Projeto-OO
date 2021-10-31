@@ -15,5 +15,8 @@ public class Categoria {
 	public String getNomeSubCategoria(int index) {
 		return subCategoria.get(index);
 	}
+	public void gravarCategoria() {
+        Functions.gravarArquivo("categorias.txt", toString());
+    }
 
 }
