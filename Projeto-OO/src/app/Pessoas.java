@@ -26,15 +26,15 @@ public class Pessoas {
 		this.Rendimento = strRendimento;
 		this.numPessoas = 0;
 	}
-
+	
+	public Pessoas(String nomePessoa, String emailPessoa, String string) {
+		this.nome= nomePessoa;
+		this.email= emailPessoa;
+		this.totRendimento= string;
+	}
+	
 	public Pessoas() {
 		pessoa = new LinkedList<Pessoas>();
-	}
-
-	public Pessoas(String nomePessoa, String emailPessoa, String string) {
-		this.nome=nomePessoa;
-		this.email=emailPessoa;
-		this.totRendimento=string;
 	}
 
 	public String getNome() {
@@ -57,13 +57,13 @@ public class Pessoas {
 	public void cadastrarPessoas() {
 		nome = JOptionPane.showInputDialog("Informe o nome da pessoa:");
 		email = JOptionPane.showInputDialog("Informe o email da pessoa:");
-		String totRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
+		totRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
 		Rendimento = Float.parseFloat(totRendimento);
 		totRendimentoFloat= Rendimento + totRendimentoFloat;
 		numPessoas = numPessoas+1;
 		
 		Pessoas p = new Pessoas(nome,email,Rendimento);
-		
+		Pessoas s = new Pessoas(nome,email,totRendimento);
 		Pessoas[] rendP = new Pessoas[P.length+1];
 		
 		for (int i=0; i<P.length; i++) {
@@ -72,13 +72,16 @@ public class Pessoas {
 		rendP[P.length] = p;
 		P = rendP;
 		boolean resposta = pessoa.add(p);
+		pessoa.add(s);
 		if (resposta) 
 			JOptionPane.showMessageDialog(null, "Aluno cadastrado com sucesso");
 		return;
 	}
+	
 	public String toString() {
 		return "" + nome + ";" + email + ";" + totRendimento + ";";
 	}
+	
 	public void gravarAlunos() {
 		BufferedWriter buffer = null;
 		FileWriter out = null;
@@ -87,8 +90,8 @@ public class Pessoas {
 			out = new FileWriter(nomeArquivo);
 			buffer = new BufferedWriter(out);
 			
-			for (Pessoas p : pessoa) {
-				buffer.write(p.toString());
+			for (Pessoas s : pessoa) {
+				buffer.write(s.toString());
 				buffer.write('\n');
 			}
 			
@@ -113,8 +116,8 @@ public class Pessoas {
 			String[] strAlunos = cadastro.split("\n");
 			for (String als : strAlunos) {
 				String[] str = als.split(";");
-				Pessoas p = new Pessoas(str[0], str[1], str[2]);
-				pessoa.add(p);
+				Pessoas s = new Pessoas(str[0], str[1], str[2]);
+				pessoa.add(s);
 			}
 		} catch (IOException e) {
 			// TODO: handle exception

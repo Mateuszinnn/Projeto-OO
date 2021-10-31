@@ -1,6 +1,10 @@
 Mateus;mateus@email.com;null;
-joao;joao@email.com;null;
-ana;ana@email.com;null;
+Mateus;mateus@email.com;7000;
+joao@email.com;joao@email.com;null;
+joao@email.com;joao@email.com;2000;
 maria;maria@email.com;null;
-clara;clara@email.com;null;
-junior;junior@email.com;null;
+maria;maria@email.com;1000;
+a;a;null;
+a;a;1;
+b;b;null;
+b;b;4;
