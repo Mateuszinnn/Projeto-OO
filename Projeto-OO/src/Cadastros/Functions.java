@@ -64,7 +64,7 @@ public class Functions {
         return true;
     }
 
-    public static boolean isDouble(String string, String mensagem) {
+    public static boolean isDouble(String string) {
         if (string.isEmpty()) {
             return false;
         }
@@ -72,7 +72,6 @@ public class Functions {
         try {
             Double.parseDouble(string);
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, mensagem);
             return false;
         }
 
