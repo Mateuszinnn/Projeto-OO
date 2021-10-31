@@ -6,7 +6,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 public class Categoria {
-	protected String descricao;
+	private String descricao;
 	private List<String> subCategorias = new ArrayList<String>();
 
 	public Categoria(String descricao, List<String> subCategoria) {
@@ -81,6 +81,14 @@ public class Categoria {
             } while (!isValid);
 
         }
+    }
+	
+	public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
 
