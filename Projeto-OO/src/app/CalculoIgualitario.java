@@ -7,7 +7,6 @@ public class CalculoIgualitario extends Calculos{
 	public CalculoIgualitario(float numPessoasIgualitario, float valorFinalIgualitario) {
 		this.numPessoasIgualitario = numPessoasIgualitario;
 		this.valorFinalIgualitario = valorFinalIgualitario;
-		
 	}
 	
 	@Override

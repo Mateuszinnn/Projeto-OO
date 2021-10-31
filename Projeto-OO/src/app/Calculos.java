@@ -1,9 +1,5 @@
 package app;
 
-import javax.swing.JOptionPane;
-
-
-
 public class Calculos implements Formulas_Calculo_Renda {
 	
 	protected float resultIgualitario;
@@ -13,7 +9,6 @@ public class Calculos implements Formulas_Calculo_Renda {
 		
 	}
 	
-
 	public float getResultIgualitario() {
 		return resultIgualitario;
 	}
@@ -24,12 +19,11 @@ public class Calculos implements Formulas_Calculo_Renda {
 
 	@Override
 	public float calculoRegraProporcional() {
-		return resultProporcional;
-		
+		return resultProporcional;	
 	}
+	
 	@Override
 	public float calculoRegraIgualitaria() {
 		return resultIgualitario;
-		
 	}
 }

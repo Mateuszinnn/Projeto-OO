@@ -5,8 +5,6 @@ import javax.swing.JOptionPane;
 public class Categoria {
 	protected String subCategoria;
 	
-	
-	
 	public Categoria() {
 		
 	}

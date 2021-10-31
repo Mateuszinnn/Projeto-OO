@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-
 public class Pessoas {
 	private String nome;
 	private String email;

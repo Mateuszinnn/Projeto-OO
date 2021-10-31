@@ -72,6 +72,7 @@ public class Despesas extends Categoria {
 			// TODO: handle exception
 		}
 	}
+	
 	public void lerDespesas() {
 		FileInputStream in = null;  
 		

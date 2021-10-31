@@ -48,7 +48,8 @@ public class Main_App {
 				
 			case 4:
 				CalculoIgualitario cI = new CalculoIgualitario(pessoa.getNumPessoas(),despesa.getValorFinal());
-				JOptionPane.showMessageDialog(null, cI.calculoRegraIgualitaria());
+				String resposta1 =  "Cada aluno tera de pagar: " + cI.calculoRegraIgualitaria() + " reais\n";
+				JOptionPane.showMessageDialog(null, resposta1);
 				break;
 				
 			case 5:
@@ -70,9 +71,5 @@ public class Main_App {
 				break;
 			}
 		} while (opcao != 0);
-		
-		
 	}
-
-
 }
