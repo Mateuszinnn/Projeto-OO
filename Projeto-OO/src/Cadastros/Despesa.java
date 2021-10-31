@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import Exceptions.DescricaoNaoInformadaException;
+import Exceptions.ValorNaoInformadoException;
 
 public class Despesa {
 
@@ -55,15 +56,14 @@ public class Despesa {
 		} while (!isValid);
 
 		do {
-			value = JOptionPane.showInputDialog("Informe o valor da despesa: ");
-
-			if (Functions.isDouble(value, "O valor digitado não é válido\nPor favor, tente novamente")) {
-				this.valor = Double.parseDouble(value);
+			try {
+				value = JOptionPane.showInputDialog("Informe o valor da despesa: ");
+				verificarValor(value, "Valor inválido!!!\nPor favor, tente novamente.");
 				isValid = true;
-			} else {
+			} catch (ValorNaoInformadoException e) {
 				isValid = false;
+				JOptionPane.showMessageDialog(null, e.getMessage());
 			}
-
 		} while (!isValid);
 
 		String fileText = Functions.lerArquivo("categorias.txt");
@@ -271,6 +271,12 @@ public class Despesa {
 	public void verificarDescricao(String descricao, String mensagem) throws DescricaoNaoInformadaException {
 		if (descricao.isBlank()) {
 			throw new DescricaoNaoInformadaException(mensagem);
+		}
+	}
+
+	public void verificarValor(String valor, String mensagem) {
+		if (!(Functions.isDouble(valor))) {
+			throw new ValorNaoInformadoException(mensagem);
 		}
 	}
 
