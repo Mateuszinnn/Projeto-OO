@@ -35,10 +35,11 @@ public class Despesa {
 
 	// Metodos especiais
 	public void cadastrarDespesa() {
-		this.descricao = JOptionPane.showInputDialog("Informe a descrição da Despesa: ");
 		String value;
 		Boolean isValid = true;
 		int optionInt;
+
+		this.descricao = JOptionPane.showInputDialog("Informe a descrição da Despesa: ");
 
 		do {
 			value = JOptionPane.showInputDialog("Informe o valor da despesa: ");
