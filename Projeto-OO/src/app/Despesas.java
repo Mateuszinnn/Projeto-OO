@@ -1,28 +1,21 @@
 package app;
 
-import java.io.BufferedWriter;
-import java.time.YearMonth;
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import Exceptions.DescricaoNaoInformadaException;
 import Exceptions.ValorNaoInformadoException;
-
+import java.time.YearMonth;
 
 public class Despesas {
 
 	private String descricao;
 	private double valor;
 	private Categoria categoria = new Categoria();
-	int year;
-	int month;
+	int year = YearMonth.now().getYear();
+	int month = YearMonth.now().getMonthValue();
 	String nomeArquivo = "despesas"+"_"+month+"_"+year+".txt";
 	List<Despesas> despesas;
-	private String categoriastr;
-	private String valorstr;
 	private double valorFinal=0;
 	
 	public Despesas() {
@@ -37,11 +30,6 @@ public class Despesas {
 		this.month = month;
 	}
 
-	public Despesas(String descricao, String categoria, String str) {
-		this.descricao = descricao;
-		this.categoriastr = categoria;
-		this.valorstr = str;
-	}
 
 	// public float getValorFinal() {
 	// return valorFinal;
@@ -285,7 +273,7 @@ public class Despesas {
 	}
 
 	public void gravarDespesas() {
-		Functions.gravarArquivo("despesas.txt", toString());
+		Functions.gravarArquivo("despesas"+"_"+month+"_"+year+".txt", toString());
 	}
 
 	public void verificarDescricao(String descricao, String mensagem) throws DescricaoNaoInformadaException {
@@ -303,28 +291,5 @@ public class Despesas {
 	public double getValorFinal() {
 		
 		return valorFinal;
-	}
-
-	public void lerDespesas() {
-		FileInputStream in = null;
-
-		try {
-			in = new FileInputStream(nomeArquivo);
-
-			byte[] conteudoArquivo = in.readAllBytes();
-
-			String cadastro = "";
-			for (int i = 0; i < conteudoArquivo.length; i++) {
-				cadastro += (char) conteudoArquivo[i];
-			}
-
-			String[] strDespesas = cadastro.split("\n");
-			for (String als : strDespesas) {
-				String[] str = als.split(";");
-				Despesas a = new Despesas(str[0], str[1], str[2]);
-				despesas.add(a);
-			}
-		} catch (IOException e) {
-		}
 	}
 }
