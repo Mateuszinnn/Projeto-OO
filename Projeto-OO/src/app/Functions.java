@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Calendar;
 
 import javax.swing.JOptionPane;
 
@@ -23,7 +24,7 @@ public class Functions {
 
             buffer.close();
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Ocorreu uma falha durante a gravação do arquivo.");
+            JOptionPane.showMessageDialog(null, "Ocorreu uma falha durante a gravaï¿½ï¿½o do arquivo.");
         }
     }
 
@@ -81,12 +82,48 @@ public class Functions {
     public static boolean rangeOfValues(int min, int max, int option) {
 
         if (option < min || option > max) {
-            JOptionPane.showMessageDialog(null, "Opção inválida! Tente novamente.");
+            JOptionPane.showMessageDialog(null, "Opï¿½ï¿½o invï¿½lida! Tente novamente.");
             return false;
         } else {
             return true;
         }
 
+    }
+
+    public static int pegarMes() {
+        String mes;
+        Boolean isValid = false;
+        do {
+            mes = JOptionPane.showInputDialog(
+                    "Escolha o mÃªs da despesa:\n1) Janeiro\n2) Fevereiro \n3) MarÃ§o \n4) Abril\n5) Maio \n6) Junho \n7) Julho\n8) Agosto \n9) Setembro \n10) Outubro\n11) Novembro\n12) Dezembro");
+
+            if (isInteger(mes, "O mÃªs selecionado Ã© invÃ¡lido, tente novamente.")) {
+                isValid = true;
+                if (Integer.parseInt(mes) < 1 || Integer.parseInt(mes) > 12) {
+                    isValid = false;
+                }
+            }
+        } while (!isValid);
+
+        return Integer.parseInt(mes);
+    }
+
+    public static int pegarAno() {
+        String ano;
+        Boolean isValid = false;
+        Calendar cal = Calendar.getInstance();
+        do {
+            ano = JOptionPane.showInputDialog("Escolha o ano da despesa");
+
+            if (isInteger(ano, "O ano digitado Ã© invÃ¡lido, tente novamente.")) {
+                isValid = true;
+                if (Integer.parseInt(ano) < cal.get(Calendar.YEAR) || Integer.parseInt(ano) > 2050) {
+                    isValid = false;
+                }
+            }
+        } while (!isValid);
+
+        return Integer.parseInt(ano);
     }
 
 }
