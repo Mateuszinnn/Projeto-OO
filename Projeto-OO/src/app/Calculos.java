@@ -1,7 +1,5 @@
 package app;
 
-import calculos.Formulas_Calculo_Renda;
-
 public class Calculos implements Formulas_Calculo_Renda {
 	
 	protected float resultIgualitario;
@@ -29,4 +27,3 @@ public class Calculos implements Formulas_Calculo_Renda {
 		return resultIgualitario;
 	}
 }
-
