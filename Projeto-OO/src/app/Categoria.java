@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import Exceptions.DescricaoNaoInformadaException;
+
 public class Categoria {
     private String descricao;
     private List<String> subCategorias = new ArrayList<String>();
