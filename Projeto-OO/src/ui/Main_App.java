@@ -47,16 +47,25 @@ public class Main_App {
 				break;
 				
 			case 4:
-				CalculoIgualitario cI = new CalculoIgualitario(pessoa.getNumPessoas(),despesa.getValorFinal());
-				String resposta1 =  "Cada aluno tera de pagar: " + cI.calculoRegraIgualitaria() + " reais\n";
-				JOptionPane.showMessageDialog(null, resposta1);
+				if(pessoa.getNumPessoas()!=0 && despesa.getValorFinal()!=0) {
+					CalculoIgualitario cI = new CalculoIgualitario(pessoa.getNumPessoas(),despesa.getValorFinal());
+					String resposta1 =  "Cada aluno tera de pagar: " + cI.calculoRegraIgualitaria() + " reais\n";
+					JOptionPane.showMessageDialog(null, resposta1);
+				}else {
+					JOptionPane.showMessageDialog(null, "Não existem alunos cadastrados na Republica ou não foram cadastradas despesas!");
+				}
+				
 				break;
 				
 			case 5:
-				for(int i=0; i<Pessoas.P.length;i++) {
-					CalculoProporcional cP = new CalculoProporcional( pessoa.getTotRendimentoFloat(), despesa.getValorFinal());
-					String resposta =  Pessoas.P[i].getNome()+" tera de pagar: "+ Pessoas.P[i].getRendimento()*cP.calculoRegraProporcional()+" reais\n";
-					JOptionPane.showMessageDialog(null, resposta);
+				if(pessoa.getNumPessoas()!=0 && despesa.getValorFinal()!=0) {
+					for(int i=0; i<Pessoas.P.length;i++) {
+						CalculoProporcional cP = new CalculoProporcional( pessoa.getTotRendimentoFloat(), despesa.getValorFinal());
+						String resposta =  Pessoas.P[i].getNome()+" tera de pagar: "+ Pessoas.P[i].getRendimento()*cP.calculoRegraProporcional()+" reais\n";
+						JOptionPane.showMessageDialog(null, resposta);
+					}
+				}else {
+					JOptionPane.showMessageDialog(null, "Não existem alunos cadastrados na Republica ou não foram cadastradas despesas!");
 				}
 				//CalculoProporcional cP = new CalculoProporcional(pessoa.getRendimento(), pessoa.getTotRendimentoFloat(), despesa.getValorFinal(),pessoa.getNumPessoas());
 	
