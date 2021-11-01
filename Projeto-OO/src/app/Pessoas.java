@@ -89,27 +89,19 @@ public class Pessoas {
 			try {
 				totRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
 				verificarRendimento(this.totRendimento, "Informe um rendimento válido.");
+				Rendimento = Float.parseFloat(totRendimento);
+				verificarRendimentoInvalido(Rendimento, "Informe um rendimento válido");
 				isValid = true;
 			} catch (DadosPessoaisIncompletosException e) {
 				isValid = false;
 				JOptionPane.showMessageDialog(null, e.getMessage());
+			} catch(RendimentoInvalidoException e) {
+				isValid = false;
+				JOptionPane.showMessageDialog(null, e.getMessage());
+				
 			}
 
 		} while (!isValid);		
-	
-		do {
-
-			try {
-				totRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
-				Rendimento = Float.parseFloat(totRendimento);
-				 verificarRendimentoInvalido(Rendimento, "Informe um rendimento válido");
-				isValid = true;
-			} catch (RendimentoInvalidoException e) {
-				isValid = false;
-				JOptionPane.showMessageDialog(null, e.getMessage());
-			}
-
-		} while (!isValid);
 		
 		totRendimentoFloat= Rendimento + totRendimentoFloat;
 		numPessoas = numPessoas+1;
