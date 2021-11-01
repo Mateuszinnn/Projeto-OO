@@ -1,0 +1,41 @@
+Pontos positivos: 
+
++ Uso de herança para os tipos de cálculos (igualitário e proporcional)
++ A implementação está muito próxima do modelo UML. 
+
+
+
+
+Pontos negativos: 
+- Faltam multiplicidades nas associações (-10%)
+- Uso de agregação ao invés de associações direcionais. Agregação é um outro
+tipo de relação que não foi apresentado em aula. (-10%)
+- Não há uma classe Republica capaz de associar os moradores e despesas. (-10%)
+- Onde está a relação entre Despesas e Categorias? (-10%)
+
+
+
+
+
+Dúvidas: 
+
+? Por que existem os métodos getPreco e getRenda em Calculos? 
+? Por que atributos resultadoIgualitario e resultadoProporcional na
+  *superclasse* Calculos?
+? Quais os elementos em CalculoIgualitario e CalculoProporcional que os diferem
+  de Calculos?
+? O que é o método emitirPagamentos() em Calculos? 
+
+
+
+
+Comentários: 
+
+Alguns erros nas associações e nas definições das classes. Em geral o trabalho é
+bom. Consertem esses erros (pontos negativos) que vocês conseguirão finalizar o
+trabalho proposto. Muito bem, pessoal! 
+
+
+
+Nota: 
+60/100 pontos.
