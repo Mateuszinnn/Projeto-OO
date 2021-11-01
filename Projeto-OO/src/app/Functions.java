@@ -119,7 +119,7 @@ public class Functions {
             if (isInteger(ano, "O ano digitado é inválido, tente novamente.")) {
                 isValid = true;
                 if (Integer.parseInt(ano) < cal.get(Calendar.YEAR) || Integer.parseInt(ano) > 2050) {
-                    JOptionPane.showMessageDialog(null, "O mês selecionado é inválido!\nPor favor, tente novamente");
+                    JOptionPane.showMessageDialog(null, "O ano selecionado é inválido!\nPor favor, tente novamente");
                     isValid = false;
                 }
             }

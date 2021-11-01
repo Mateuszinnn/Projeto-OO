@@ -14,10 +14,10 @@ public class Despesas {
 	private Categoria categoria = new Categoria();
 	int year = YearMonth.now().getYear();
 	int month = YearMonth.now().getMonthValue();
-	String nomeArquivo = "despesas"+"_"+month+"_"+year+".txt";
+	String nomeArquivo = "despesas" + "_" + month + "_" + year + ".txt";
 	List<Despesas> despesas;
-	private double valorFinal=0;
-	
+	private double valorFinal = 0;
+
 	public Despesas() {
 		despesas = new LinkedList<Despesas>();
 	}
@@ -29,7 +29,6 @@ public class Despesas {
 		this.year = year;
 		this.month = month;
 	}
-
 
 	// public float getValorFinal() {
 	// return valorFinal;
@@ -44,8 +43,8 @@ public class Despesas {
 		do {
 
 			try {
-				this.descricao = JOptionPane.showInputDialog("Informe a descrição da Despesa: ");
-				verificarDescricao(this.descricao, "Informe uma descrição válida.");
+				this.descricao = JOptionPane.showInputDialog("Informe a descriï¿½ï¿½o da Despesa: ");
+				verificarDescricao(this.descricao, "Informe uma descriï¿½ï¿½o vï¿½lida.");
 				isValid = true;
 
 			} catch (DescricaoNaoInformadaException e) {
@@ -58,11 +57,11 @@ public class Despesas {
 		do {
 			try {
 				value = JOptionPane.showInputDialog("Informe o valor da despesa: ");
-				verificarValor(value, "Valor inválido!!!\nPor favor, tente novamente.");
+				verificarValor(value, "Valor invï¿½lido!!!\nPor favor, tente novamente.");
 				valor = Double.parseDouble(value);
 				valorFinal = valor + valorFinal;
 				isValid = true;
-				
+
 			} catch (ValorNaoInformadoException e) {
 				isValid = false;
 				JOptionPane.showMessageDialog(null, e.getMessage());
@@ -77,9 +76,9 @@ public class Despesas {
 			do {
 
 				String option = JOptionPane.showInputDialog(
-						"NÃO encontramos nenhuma categoria cadastrada.\nGostaria de realizar o cadastro?\n1) - Sim\n2) - NÃO");
+						"Nï¿½O encontramos nenhuma categoria cadastrada.\nGostaria de realizar o cadastro?\n1) - Sim\n2) - Nï¿½O");
 
-				isValid = Functions.isInteger(option, "Opção inválida! Tente novamente");
+				isValid = Functions.isInteger(option, "Opï¿½ï¿½o invï¿½lida! Tente novamente");
 
 				if (isValid) {
 					optionInt = Integer.parseInt(option);
@@ -91,8 +90,8 @@ public class Despesas {
 
 							do {
 								option = JOptionPane.showInputDialog(
-										"Gostaria de prosseguir com o cadastramento da despesa?\n ) Sim\n2) NÃO");
-								isValid = Functions.isInteger(option, "Opção inválida! Tente novamente");
+										"Gostaria de prosseguir com o cadastramento da despesa?\n ) Sim\n2) Nï¿½O");
+								isValid = Functions.isInteger(option, "Opï¿½ï¿½o invï¿½lida! Tente novamente");
 
 								if (isValid) {
 									if (Functions.rangeOfValues(1, 2, optionInt)) {
@@ -139,7 +138,7 @@ public class Despesas {
 			option = JOptionPane.showInputDialog("Escolha a categoria desejada: \n" + ImprimirCategorias);
 
 			try {
-				isValid = Functions.isInteger(option, "Opção inválida! Tente novamente");
+				isValid = Functions.isInteger(option, "Opï¿½ï¿½o invï¿½lida! Tente novamente");
 			} catch (DescricaoNaoInformadaException e) {
 				isValid = false;
 				JOptionPane.showMessageDialog(null, e.getMessage());
@@ -165,7 +164,7 @@ public class Despesas {
 						do {
 							option = JOptionPane.showInputDialog("Escolha uma categoria: \n" + ImprimirCategorias);
 
-							isValid = Functions.isInteger(option, "Opção inválida! Tente novamente");
+							isValid = Functions.isInteger(option, "Opï¿½ï¿½o invï¿½lida! Tente novamente");
 
 							if (isValid) {
 								optionInt = Integer.parseInt(option);
@@ -199,7 +198,7 @@ public class Despesas {
 								option = JOptionPane
 										.showInputDialog("Escolha uma subcategoria: \n" + ImprimirSubCategorias);
 
-								isValid = Functions.isInteger(option, "Opção inválida! Tente novamente");
+								isValid = Functions.isInteger(option, "Opï¿½ï¿½o invï¿½lida! Tente novamente");
 
 								if (isValid) {
 									optionInt = Integer.parseInt(option);
@@ -214,8 +213,10 @@ public class Despesas {
 
 							} while (!isValid);
 						}
+						this.month = Functions.pegarMes();
+						this.year = Functions.pegarAno();
 						JOptionPane.showMessageDialog(null, "Despesa cadastrada com sucesso");
-						gravarDespesas();
+						gravarDespesas(this.month, this.year);
 						return;
 					} else {
 						isValid = true;
@@ -244,7 +245,7 @@ public class Despesas {
 			do {
 				option = JOptionPane.showInputDialog("Escolha uma subcategoria: \n" + ImprimirSubCategorias);
 
-				isValid = Functions.isInteger(option, "Opção inválida! Tente novamente");
+				isValid = Functions.isInteger(option, "Opï¿½ï¿½o invï¿½lida! Tente novamente");
 
 				if (isValid) {
 					optionInt = Integer.parseInt(option);
@@ -261,9 +262,12 @@ public class Despesas {
 
 		}
 
+		this.month = Functions.pegarMes();
+		this.year = Functions.pegarAno();
+
 		if (isValid) {
 			JOptionPane.showMessageDialog(null, "Despesa cadastrada com sucesso");
-			gravarDespesas();
+			gravarDespesas(this.month, this.year);
 		}
 	}
 
@@ -272,8 +276,8 @@ public class Despesas {
 		return descricao + ";" + this.categoria.getDescricao() + ";" + valor;
 	}
 
-	public void gravarDespesas() {
-		Functions.gravarArquivo("despesas"+"_"+month+"_"+year+".txt", toString());
+	public void gravarDespesas(int month, int year) {
+		Functions.gravarArquivo("despesas" + "_" + month + "_" + year + ".txt", toString());
 	}
 
 	public void verificarDescricao(String descricao, String mensagem) throws DescricaoNaoInformadaException {
@@ -289,7 +293,7 @@ public class Despesas {
 	}
 
 	public double getValorFinal() {
-		
+
 		return valorFinal;
 	}
 }
