@@ -2,15 +2,15 @@ package app;
 
 public class CalculoIgualitario extends Calculos{
 	private float numPessoasIgualitario;
-	private float valorFinalIgualitario;
+	private double valorFinalIgualitario;
 	
-	public CalculoIgualitario(float numPessoasIgualitario, float valorFinalIgualitario) {
+	public CalculoIgualitario(float numPessoasIgualitario, double d) {
 		this.numPessoasIgualitario = numPessoasIgualitario;
-		this.valorFinalIgualitario = valorFinalIgualitario;
+		this.valorFinalIgualitario = d;
 	}
 	
 	@Override
-	public float calculoRegraIgualitaria() {
+	public double calculoRegraIgualitaria() {
 		return valorFinalIgualitario/numPessoasIgualitario;
 	}
 }

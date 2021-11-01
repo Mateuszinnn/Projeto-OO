@@ -18,12 +18,12 @@ public class Calculos implements Formulas_Calculo_Renda {
 	}
 
 	@Override
-	public float calculoRegraProporcional() {
+	public double calculoRegraProporcional() {
 		return resultProporcional;	
 	}
 	
 	@Override
-	public float calculoRegraIgualitaria() {
+	public double calculoRegraIgualitaria() {
 		return resultIgualitario;
 	}
 }

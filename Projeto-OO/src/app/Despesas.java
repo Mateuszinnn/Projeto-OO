@@ -11,19 +11,25 @@ import javax.swing.JOptionPane;
 import Exceptions.DescricaoNaoInformadaException;
 import Exceptions.ValorNaoInformadoException;
 
-public class Despesa {
+
+public class Despesas {
 
 	private String descricao;
 	private double valor;
 	private Categoria categoria = new Categoria();
 	int year;
 	int month;
-
-	public Despesa() {
-
+	String nomeArquivo = "despesas"+"_"+month+"_"+year+".txt";
+	List<Despesas> despesas;
+	private String categoriastr;
+	private String valorstr;
+	private double valorFinal=0;
+	
+	public Despesas() {
+		despesas = new LinkedList<Despesas>();
 	}
 
-	public Despesa(String descricao, double valor, Categoria categoria, int year, int month) {
+	public Despesas(String descricao, double valor, Categoria categoria, int year, int month) {
 		this.descricao = descricao;
 		this.valor = valor;
 		this.categoria = categoria;
@@ -31,12 +37,18 @@ public class Despesa {
 		this.month = month;
 	}
 
+	public Despesas(String descricao, String categoria, String str) {
+		this.descricao = descricao;
+		this.categoriastr = categoria;
+		this.valorstr = str;
+	}
+
 	// public float getValorFinal() {
 	// return valorFinal;
 	// }
 
 	// Metodos especiais
-	public void cadastrarDespesa() {
+	public void cadastrarDespesas() {
 		String value;
 		Boolean isValid = true;
 		int optionInt;
@@ -58,8 +70,11 @@ public class Despesa {
 		do {
 			try {
 				value = JOptionPane.showInputDialog("Informe o valor da despesa: ");
+				valor = Double.parseDouble(value);
+				valorFinal = valor + valorFinal;
 				verificarValor(value, "Valor inválido!!!\nPor favor, tente novamente.");
 				isValid = true;
+				
 			} catch (ValorNaoInformadoException e) {
 				isValid = false;
 				JOptionPane.showMessageDialog(null, e.getMessage());
@@ -94,7 +109,7 @@ public class Despesa {
 								if (isValid) {
 									if (Functions.rangeOfValues(1, 2, optionInt)) {
 										if (Integer.parseInt(option) == 1) {
-											cadastrarDespesa();
+											cadastrarDespesas();
 											return;
 										} else {
 											return;
@@ -212,7 +227,7 @@ public class Despesa {
 							} while (!isValid);
 						}
 						JOptionPane.showMessageDialog(null, "Despesa cadastrada com sucesso");
-						gravarDespesa();
+						gravarDespesas();
 						return;
 					} else {
 						isValid = true;
@@ -260,7 +275,7 @@ public class Despesa {
 
 		if (isValid) {
 			JOptionPane.showMessageDialog(null, "Despesa cadastrada com sucesso");
-			gravarDespesa();
+			gravarDespesas();
 		}
 	}
 
@@ -269,7 +284,7 @@ public class Despesa {
 		return descricao + ";" + this.categoria.getDescricao() + ";" + valor;
 	}
 
-	public void gravarDespesa() {
+	public void gravarDespesas() {
 		Functions.gravarArquivo("despesas.txt", toString());
 	}
 
@@ -285,7 +300,12 @@ public class Despesa {
 		}
 	}
 
-	/* public void lerDespesas() {
+	public double getValorFinal() {
+		
+		return valorFinal;
+	}
+
+	public void lerDespesas() {
 		FileInputStream in = null;
 
 		try {
@@ -301,10 +321,10 @@ public class Despesa {
 			String[] strDespesas = cadastro.split("\n");
 			for (String als : strDespesas) {
 				String[] str = als.split(";");
-				Despesa a = new Despesa(str[0], str[1], str[2]);
+				Despesas a = new Despesas(str[0], str[1], str[2]);
 				despesas.add(a);
 			}
 		} catch (IOException e) {
 		}
-	} */
+	}
 }
