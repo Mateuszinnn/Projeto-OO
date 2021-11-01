@@ -3,6 +3,8 @@ package app;
 import javax.swing.JOptionPane;
 
 import Exceptions.DadosPessoaisIncompletosException;
+import Exceptions.RendimentoInvalidoException;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -87,8 +89,6 @@ public class Pessoas {
 			try {
 				totRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
 				verificarRendimento(this.totRendimento, "Informe um rendimento válido.");
-				Rendimento = Float.parseFloat(totRendimento);
-				 verificarRendimentoInvalido(Rendimento, "Informe um rendimento válido");
 				isValid = true;
 			} catch (DadosPessoaisIncompletosException e) {
 				isValid = false;
@@ -97,6 +97,20 @@ public class Pessoas {
 
 		} while (!isValid);		
 	
+		do {
+
+			try {
+				totRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
+				Rendimento = Float.parseFloat(totRendimento);
+				 verificarRendimentoInvalido(Rendimento, "Informe um rendimento válido");
+				isValid = true;
+			} catch (RendimentoInvalidoException e) {
+				isValid = false;
+				JOptionPane.showMessageDialog(null, e.getMessage());
+			}
+
+		} while (!isValid);
+		
 		totRendimentoFloat= Rendimento + totRendimentoFloat;
 		numPessoas = numPessoas+1;
 		
@@ -138,9 +152,9 @@ public class Pessoas {
 			throw new DadosPessoaisIncompletosException(mensagem);
 		}
 	}
-	public void verificarRendimentoInvalido(float Rendimento, String mensagem) throws DadosPessoaisIncompletosException {
+	public void verificarRendimentoInvalido(float Rendimento, String mensagem) throws RendimentoInvalidoException {
 		if (Rendimento < 0) {
-			throw new DadosPessoaisIncompletosException(mensagem);
+			throw new RendimentoInvalidoException(mensagem);
 		}
 	}
 }
