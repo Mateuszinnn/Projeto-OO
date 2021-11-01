@@ -43,8 +43,8 @@ public class Despesas {
 		do {
 
 			try {
-				this.descricao = JOptionPane.showInputDialog("Informe a descri��o da Despesa: ");
-				verificarDescricao(this.descricao, "Informe uma descri��o v�lida.");
+				this.descricao = JOptionPane.showInputDialog("Informe a descricao da Despesa: ");
+				verificarDescricao(this.descricao, "Informe uma descricao valida.");
 				isValid = true;
 
 			} catch (DescricaoNaoInformadaException e) {
@@ -57,7 +57,7 @@ public class Despesas {
 		do {
 			try {
 				value = JOptionPane.showInputDialog("Informe o valor da despesa: ");
-				verificarValor(value, "Valor inv�lido!!!\nPor favor, tente novamente.");
+				verificarValor(value, "Valor invalido!!!\nPor favor, tente novamente.");
 				valor = Double.parseDouble(value);
 				valorFinal = valor + valorFinal;
 				isValid = true;
@@ -76,9 +76,9 @@ public class Despesas {
 			do {
 
 				String option = JOptionPane.showInputDialog(
-						"N�O encontramos nenhuma categoria cadastrada.\nGostaria de realizar o cadastro?\n1) - Sim\n2) - N�O");
+						"NAO encontramos nenhuma categoria cadastrada.\nGostaria de realizar o cadastro?\n1) - Sim\n2) - NAO");
 
-				isValid = Functions.isInteger(option, "Op��o inv�lida! Tente novamente");
+				isValid = Functions.isInteger(option, "Opcao invalida! Tente novamente");
 
 				if (isValid) {
 					optionInt = Integer.parseInt(option);
@@ -90,8 +90,8 @@ public class Despesas {
 
 							do {
 								option = JOptionPane.showInputDialog(
-										"Gostaria de prosseguir com o cadastramento da despesa?\n ) Sim\n2) N�O");
-								isValid = Functions.isInteger(option, "Op��o inv�lida! Tente novamente");
+										"Gostaria de prosseguir com o cadastramento da despesa?\n ) Sim\n2) NAO");
+								isValid = Functions.isInteger(option, "Opcao invalida! Tente novamente");
 
 								if (isValid) {
 									if (Functions.rangeOfValues(1, 2, optionInt)) {
@@ -138,7 +138,7 @@ public class Despesas {
 			option = JOptionPane.showInputDialog("Escolha a categoria desejada: \n" + ImprimirCategorias);
 
 			try {
-				isValid = Functions.isInteger(option, "Op��o inv�lida! Tente novamente");
+				isValid = Functions.isInteger(option, "Opcao invalida! Tente novamente");
 			} catch (DescricaoNaoInformadaException e) {
 				isValid = false;
 				JOptionPane.showMessageDialog(null, e.getMessage());
@@ -164,7 +164,7 @@ public class Despesas {
 						do {
 							option = JOptionPane.showInputDialog("Escolha uma categoria: \n" + ImprimirCategorias);
 
-							isValid = Functions.isInteger(option, "Op��o inv�lida! Tente novamente");
+							isValid = Functions.isInteger(option, "Opcao invalida! Tente novamente");
 
 							if (isValid) {
 								optionInt = Integer.parseInt(option);
@@ -198,7 +198,7 @@ public class Despesas {
 								option = JOptionPane
 										.showInputDialog("Escolha uma subcategoria: \n" + ImprimirSubCategorias);
 
-								isValid = Functions.isInteger(option, "Op��o inv�lida! Tente novamente");
+								isValid = Functions.isInteger(option, "Opcao invalida! Tente novamente");
 
 								if (isValid) {
 									optionInt = Integer.parseInt(option);
@@ -245,7 +245,7 @@ public class Despesas {
 			do {
 				option = JOptionPane.showInputDialog("Escolha uma subcategoria: \n" + ImprimirSubCategorias);
 
-				isValid = Functions.isInteger(option, "Op��o inv�lida! Tente novamente");
+				isValid = Functions.isInteger(option, "Opcao invalida! Tente novamente");
 
 				if (isValid) {
 					optionInt = Integer.parseInt(option);

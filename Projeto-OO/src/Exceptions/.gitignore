@@ -1,2 +1,5 @@
 /DadosPessoaisIncompletosException.class
 /RendimentoInvalidoException.class
+/CategoriaNaoInformadaException.class
+/DescricaoNaoInformadaException.class
+/ValorNaoInformadoException.class
