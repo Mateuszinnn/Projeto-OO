@@ -29,22 +29,33 @@ public class Categoria {
         String subCategoria, option;
         Boolean isValid = false;
 
-        this.descricao = JOptionPane.showInputDialog("Informe a descrição da categoria:");
+        do {
+
+            try {
+                this.descricao = JOptionPane.showInputDialog("Informe a descriÃ§Ã£o da categoria: ");
+                verificarDescricao(this.descricao, "Por favor, informe uma descriÃ§ao vÃ¡lida.");
+                isValid = true;
+            } catch (DescricaoNaoInformadaException e) {
+                isValid = false;
+                JOptionPane.showMessageDialog(null, e.getMessage());
+            }
+
+        } while (!isValid);
 
         do {
 
             if (this.subCategorias.size() == 0) {
-                option = JOptionPane.showInputDialog("Gostaria de Cadastrar uma subcategoria?\n1) - Sim\n2) - NÃO");
+                option = JOptionPane.showInputDialog("Gostaria de Cadastrar uma subcategoria?\n1) - Sim\n2) - Nï¿½O");
             } else {
-                option = JOptionPane.showInputDialog("Gostaria de Cadastrar outra subcategoria?\n1) - Sim\n2) - NÃO");
+                option = JOptionPane.showInputDialog("Gostaria de Cadastrar outra subcategoria?\n1) - Sim\n2) - Nï¿½O");
             }
 
-            isValid = Functions.isInteger(option, "Opção inválida! Tente novamente");
+            isValid = Functions.isInteger(option, "Opï¿½ï¿½o invï¿½lida! Tente novamente");
 
             if (isValid) {
                 if (Functions.rangeOfValues(1, 2, Integer.parseInt(option))) {
                     if (Integer.parseInt(option) == 1) {
-                        subCategoria = JOptionPane.showInputDialog("Digite a descrição da subcategoria: ");
+                        subCategoria = JOptionPane.showInputDialog("Digite a descriï¿½ï¿½o da subcategoria: ");
                         this.subCategorias.add(subCategoria);
                         isValid = false;
                     }
@@ -70,9 +81,9 @@ public class Categoria {
             do {
 
                 String option = JOptionPane.showInputDialog(
-                        "NÃO encontramos nenhuma categoria cadastrada.\nGostaria de realizar o cadastro?\n1) - Sim\n2) - NÃO");
+                        "Nï¿½O encontramos nenhuma categoria cadastrada.\nGostaria de realizar o cadastro?\n1) - Sim\n2) - Nï¿½O");
 
-                isValid = Functions.isInteger(option, "Opção inválida! Tente novamente");
+                isValid = Functions.isInteger(option, "Opï¿½ï¿½o invï¿½lida! Tente novamente");
 
                 if (isValid) {
                     if (Functions.rangeOfValues(1, 2, Integer.parseInt(option))) {
@@ -93,6 +104,12 @@ public class Categoria {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public void verificarDescricao(String descricao, String mensagem) {
+        if (descricao.isBlank()) {
+            throw new DescricaoNaoInformadaException(mensagem);
+        }
     }
 
     @Override
