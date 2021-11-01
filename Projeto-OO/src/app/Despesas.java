@@ -70,9 +70,9 @@ public class Despesas {
 		do {
 			try {
 				value = JOptionPane.showInputDialog("Informe o valor da despesa: ");
+				verificarValor(value, "Valor inválido!!!\nPor favor, tente novamente.");
 				valor = Double.parseDouble(value);
 				valorFinal = valor + valorFinal;
-				verificarValor(value, "Valor inválido!!!\nPor favor, tente novamente.");
 				isValid = true;
 				
 			} catch (ValorNaoInformadoException e) {
