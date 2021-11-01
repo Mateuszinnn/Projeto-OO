@@ -56,10 +56,36 @@ public class Pessoas {
 	
 //metodos especiais
 	public void cadastrarPessoas() {
-		nome = JOptionPane.showInputDialog("Informe o nome da pessoa:");
+		nome = JOptionPane.showInputDialog(null,"Informe o nome da pessoa:");
+		// verificando se é vazio ou nao
+		while(nome.trim().equals("")) {
+			if(nome.trim().equals("")) {
+				JOptionPane.showMessageDialog(null, "DadosPessoaisIncompletosException");
+				nome=JOptionPane.showInputDialog(null,"é necessario o preenchimento, tente de novo:");
+			}
+		}
+		
 		email = JOptionPane.showInputDialog("Informe o email da pessoa:");
+		// verificando se é vazio ou nao
+		while(email.trim().equals("")) {
+			if(email.trim().equals("")) {
+				JOptionPane.showMessageDialog(null, "DadosPessoaisIncompletosException");
+				email=JOptionPane.showInputDialog(null,"é necessario o preenchimento, tente de novo:");
+
+			}
+		}
+		
 		totRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
-		Rendimento = Float.parseFloat(totRendimento);
+		try {
+			Rendimento = Float.parseFloat(totRendimento);
+		}catch(NumberFormatException e) {
+			String mensagem=e.getMessage()+"\n";
+			JOptionPane.showMessageDialog(null, mensagem);
+			totRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
+			Rendimento = Float.parseFloat(totRendimento);
+		}
+		
+	
 		totRendimentoFloat= Rendimento + totRendimentoFloat;
 		numPessoas = numPessoas+1;
 		
