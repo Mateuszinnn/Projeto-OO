@@ -16,7 +16,7 @@ public class Pessoas {
 	public float numPessoas;
 	public float Rendimento;
 	List<Pessoas> pessoa;
-	List<Pessoas> pessoas;
+
 	String nomeArquivo = "alunos.txt";
 	public static Pessoas[] P = new Pessoas[0];
 
@@ -35,7 +35,7 @@ public class Pessoas {
 	
 	public Pessoas() {
 		pessoa = new LinkedList<Pessoas>();
-		pessoas = new LinkedList<Pessoas>();
+
 	}
 
 	public String getNome() {
@@ -90,7 +90,6 @@ public class Pessoas {
 		numPessoas = numPessoas+1;
 		
 		Pessoas p = new Pessoas(nome,email,Rendimento);
-		Pessoas s = new Pessoas(nome,email,totRendimento);
 		Pessoas[] rendP = new Pessoas[P.length+1];
 		
 		for (int i=0; i<P.length; i++) {
@@ -99,7 +98,7 @@ public class Pessoas {
 		rendP[P.length] = p;
 		P = rendP;
 		boolean resposta = pessoa.add(p);
-		pessoas.add(s);
+		
 		if (resposta) 
 			JOptionPane.showMessageDialog(null, "Aluno cadastrado com sucesso");
 		return;
@@ -110,45 +109,6 @@ public class Pessoas {
 	}
 	
 	public void gravarAlunos() {
-		BufferedWriter buffer = null;
-		FileWriter out = null;
-		
-		try {
-			out = new FileWriter(nomeArquivo);
-			buffer = new BufferedWriter(out);
-			
-			for (Pessoas s : pessoas) {
-				buffer.write(s.toString());
-				buffer.write('\n');
-			}
-			
-			buffer.close();
-		} catch (IOException e) {
-			// TODO: handle exception
-		}
+		Functions.gravarArquivo("alunos.txt", toString());
 	}	
-	
-	public void lerAlunos() {
-		FileInputStream in = null;  
-		try {
-			in = new FileInputStream(nomeArquivo); 
-			
-			byte[] conteudoArquivo = in.readAllBytes();
-		
-			String cadastro = "";
-			for (int i=0; i<conteudoArquivo.length; i++) {
-				cadastro += (char)conteudoArquivo[i];
-			}
-			
-			String[] strAlunos = cadastro.split("\n");
-			for (String als : strAlunos) {
-				String[] str = als.split(";");
-				Pessoas s = new Pessoas(str[0], str[1], str[2]);
-				pessoas.add(s);
-			}
-		} catch (IOException e) {
-			// TODO: handle exception
-		}
-	}
-
 }

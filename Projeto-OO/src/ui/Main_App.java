@@ -18,7 +18,6 @@ public class Main_App {
 	public static void main(String[] args){
 		
 		int opcao;
-		pessoa.lerAlunos();
 		do { 
 			String strOpcao = JOptionPane.showInputDialog("Bem vindo ao App da Republica! \n\n"
 					+ "Escolha uma opcao: \n\n"
