@@ -29,22 +29,22 @@ public class Categoria {
         String subCategoria, option;
         Boolean isValid = false;
 
-        this.descricao = JOptionPane.showInputDialog("Informe a descri√ß√£o da categoria:");
+        this.descricao = JOptionPane.showInputDialog("Informe a descriÁ„o da categoria:");
 
         do {
 
             if (this.subCategorias.size() == 0) {
-                option = JOptionPane.showInputDialog("Gostaria de Cadastrar uma subcategoria?\n1) - Sim\n2) - N√£o");
+                option = JOptionPane.showInputDialog("Gostaria de Cadastrar uma subcategoria?\n1) - Sim\n2) - N√O");
             } else {
-                option = JOptionPane.showInputDialog("Gostaria de Cadastrar outra subcategoria?\n1) - Sim\n2) - N√£o");
+                option = JOptionPane.showInputDialog("Gostaria de Cadastrar outra subcategoria?\n1) - Sim\n2) - N√O");
             }
 
-            isValid = Functions.isInteger(option, "Op√ß√£o inv√°lida! Tente novamente");
+            isValid = Functions.isInteger(option, "OpÁ„o inv·lida! Tente novamente");
 
             if (isValid) {
                 if (Functions.rangeOfValues(1, 2, Integer.parseInt(option))) {
                     if (Integer.parseInt(option) == 1) {
-                        subCategoria = JOptionPane.showInputDialog("Digite a descri√ß√£o da subcategoria: ");
+                        subCategoria = JOptionPane.showInputDialog("Digite a descriÁ„o da subcategoria: ");
                         this.subCategorias.add(subCategoria);
                         isValid = false;
                     }
@@ -70,9 +70,9 @@ public class Categoria {
             do {
 
                 String option = JOptionPane.showInputDialog(
-                        "N√£o encontramos nenhuma categoria cadastrada.\nGostaria de realizar o cadastro?\n1) - Sim\n2) - N√£o");
+                        "N√O encontramos nenhuma categoria cadastrada.\nGostaria de realizar o cadastro?\n1) - Sim\n2) - N√O");
 
-                isValid = Functions.isInteger(option, "Op√ß√£o inv√°lida! Tente novamente");
+                isValid = Functions.isInteger(option, "OpÁ„o inv·lida! Tente novamente");
 
                 if (isValid) {
                     if (Functions.rangeOfValues(1, 2, Integer.parseInt(option))) {

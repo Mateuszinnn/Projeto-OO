@@ -23,7 +23,7 @@ public class Functions {
 
             buffer.close();
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Ocorreu uma falha durante a grava√ß√£o do arquivo.");
+            JOptionPane.showMessageDialog(null, "Ocorreu uma falha durante a gravaÁ„o do arquivo.");
         }
     }
 
@@ -81,7 +81,7 @@ public class Functions {
     public static boolean rangeOfValues(int min, int max, int option) {
 
         if (option < min || option > max) {
-            JOptionPane.showMessageDialog(null, "Op√ß√£o inv√°lida! Tente novamente.");
+            JOptionPane.showMessageDialog(null, "OpÁ„o inv·lida! Tente novamente.");
             return false;
         } else {
             return true;

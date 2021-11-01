@@ -1,10 +1,8 @@
 package app;
 
 import javax.swing.JOptionPane;
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.IOException;
+
+import Exceptions.DadosPessoaisIncompletosException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -56,35 +54,48 @@ public class Pessoas {
 	
 //metodos especiais
 	public void cadastrarPessoas() {
-		nome = JOptionPane.showInputDialog(null,"Informe o nome da pessoa:");
-		// verificando se é vazio ou nao
-		while(nome.trim().equals("")) {
-			if(nome.trim().equals("")) {
-				JOptionPane.showMessageDialog(null, "DadosPessoaisIncompletosException");
-				nome=JOptionPane.showInputDialog(null,"é necessario o preenchimento, tente de novo:");
-			}
-		}
+		Boolean isValid = true;
 		
-		email = JOptionPane.showInputDialog("Informe o email da pessoa:");
-		// verificando se é vazio ou nao
-		while(email.trim().equals("")) {
-			if(email.trim().equals("")) {
-				JOptionPane.showMessageDialog(null, "DadosPessoaisIncompletosException");
-				email=JOptionPane.showInputDialog(null,"é necessario o preenchimento, tente de novo:");
+		do {
 
+			try {
+				nome = JOptionPane.showInputDialog(null,"Informe o nome da pessoa:");
+				verificarNome(this.nome, "Informe um nome válido.");
+				isValid = true;
+			} catch (DadosPessoaisIncompletosException e) {
+				isValid = false;
+				JOptionPane.showMessageDialog(null, e.getMessage());
 			}
-		}
+
+		} while (!isValid);
 		
-		totRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
-		try {
-			Rendimento = Float.parseFloat(totRendimento);
-		}catch(NumberFormatException e) {
-			String mensagem=e.getMessage()+"\n";
-			JOptionPane.showMessageDialog(null, mensagem);
-			totRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
-			Rendimento = Float.parseFloat(totRendimento);
-		}
+		do {
+
+			try {
+				email = JOptionPane.showInputDialog("Informe o email da pessoa:");
+				verificarEmail(this.email, "Informe um email válido.");
+				isValid = true;
+			} catch (DadosPessoaisIncompletosException e) {
+				isValid = false;
+				JOptionPane.showMessageDialog(null, e.getMessage());
+			}
+
+		} while (!isValid);
 		
+		do {
+
+			try {
+				totRendimento = JOptionPane.showInputDialog("Informe o rendimento total da pessoa ");
+				verificarRendimento(this.totRendimento, "Informe um rendimento válido.");
+				Rendimento = Float.parseFloat(totRendimento);
+				 verificarRendimentoInvalido(Rendimento, "Informe um rendimento válido");
+				isValid = true;
+			} catch (DadosPessoaisIncompletosException e) {
+				isValid = false;
+				JOptionPane.showMessageDialog(null, e.getMessage());
+			}
+
+		} while (!isValid);		
 	
 		totRendimentoFloat= Rendimento + totRendimentoFloat;
 		numPessoas = numPessoas+1;
@@ -110,5 +121,26 @@ public class Pessoas {
 	
 	public void gravarAlunos() {
 		Functions.gravarArquivo("alunos.txt", toString());
-	}	
+	}
+	
+	public void verificarNome(String nome, String mensagem) throws DadosPessoaisIncompletosException {
+		if (nome.isBlank()) {
+			throw new DadosPessoaisIncompletosException(mensagem);
+		}
+	}
+	public void verificarEmail(String email, String mensagem) throws DadosPessoaisIncompletosException {
+		if (email.isBlank()) {
+			throw new DadosPessoaisIncompletosException(mensagem);
+		}
+	}
+	public void verificarRendimento(String totRendimento, String mensagem) throws DadosPessoaisIncompletosException {
+		if (totRendimento.isBlank()) {
+			throw new DadosPessoaisIncompletosException(mensagem);
+		}
+	}
+	public void verificarRendimentoInvalido(float Rendimento, String mensagem) throws DadosPessoaisIncompletosException {
+		if (Rendimento < 0) {
+			throw new DadosPessoaisIncompletosException(mensagem);
+		}
+	}
 }
