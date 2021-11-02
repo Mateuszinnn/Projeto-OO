@@ -14,4 +14,6 @@ Hellen fernanda mendonça 		20/2016480\
 Maciel Ferreira Custódio Júnior		19/0100087\
 Mateus de Almeida Dias			19/0142260
 
+Para abrir o UML basta acessar o site https://app.diagrams.net/
+
 
